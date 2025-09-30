@@ -1,0 +1,5 @@
+# I.	Untuk output, output yang pertama adalah 55, dan untuk output yang kedua adalah 75000
+
+# II.	Penjelasan
+# total _sementara bisa menghasilkan output 55 karena menggunakan tipe data String, yang dimana jika nilai String * (dikali) 2 maka yang terjadi Stringnya diulang 2x (5 menjadi 55 karena diulang 2x), operator kebanyakan tidak berfungsi jika digunakan kepada string keculai perkalian (*) dan pertambahan (+), untuk pertambahan hanya berfungsi untuk String + String, Jika String + angka yang ada malah error.
+# untuk total_akhir bisa menghasilkan output 75000 karena jumlah_barang tipe datanya sudah di ubah ke Integer dengan kode [  jumlah_barang = int(jumlah_barang) ], nah karena tipe datanya sudah di ubah ke integer maka operator aritmatika berfungsi normal seperti biasanya. Dan kenapa bisa menghasilkan output 75000?, ya karena variable total_akhir mengkalikan variable jumlah_barang dan jumlah_satuan dengan kode [ total_akhir = jumlah_barang * jumlah_satuan ], yang berarti 5 x 15000 = 75000
