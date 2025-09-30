@@ -1,47 +1,47 @@
-# Soal 1
+# # Soal 1
 
-# Harga satuan barang
-harga_buku = 5000
-harga_pensil = 4500
+# # Harga satuan barang
+# harga_buku = 5000
+# harga_pensil = 4500
 
-# Julah barang yang dibeli
-jumlah_buku = 3
-jumlah_pensil = 2
+# # Jumlah barang yang dibeli
+# jumlah_buku = 3
+# jumlah_pensil = 2
 
-# Hitung total harga sebelum pajak
-total_sebelum_pajak = (harga_buku * jumlah_buku) + (harga_pensil * jumlah_pensil)
+# # Hitung total harga sebelum pajak
+# total_sebelum_pajak = (harga_buku * jumlah_buku) + (harga_pensil * jumlah_pensil)
 
-# Hitung pajak 10%
-pajak = total_sebelum_pajak * 0.10
+# # Hitung pajak 10%
+# pajak = total_sebelum_pajak * 0.10
 
-# Total setelah pajak
-total_setelah_pajak = total_sebelum_pajak + pajak
+# # Total setelah pajak
+# total_setelah_pajak = total_sebelum_pajak + pajak
 
-# Hasil
-print("TOTAL harga sebelum pajak : Rp", total_sebelum_pajak)
-print("Pajak 10%                 : Rp", int(pajak))
-print("Total yang harus dibayar  : Rp", int(total_setelah_pajak))
+# # Hasil
+# print("TOTAL harga sebelum pajak : Rp", total_sebelum_pajak)
+# print("Pajak 10%                 : Rp", int(pajak))
+# print("Total yang harus dibayar  : Rp", int(total_setelah_pajak))
 
 
-# Soal 2
+# # Soal 2
 
-# Program menghitung volume dan luas permukaan balok
+# # Program menghitung volume dan luas permukaan balok
 
-# Input dari user 
-panjang = int(input("Masukkan panjang balok (cm): "))
-lebar = int(input("Masukkan lebar balok (cm) "))
-tinggi = int(input("Masukkan tinggi balok (cm): "))
+# # Input dari user 
+# panjang = int(input("Masukkan panjang balok (cm): "))
+# lebar = int(input("Masukkan lebar balok (cm) "))
+# tinggi = int(input("Masukkan tinggi balok (cm): "))
 
-# Hitung volume
-volume = panjang * lebar * tinggi
+# # Hitung volume
+# volume = panjang * lebar * tinggi
 
-# Hitung luas permukaan 
-luas_permukaan = ((panjang * lebar) + (panjang * tinggi) + (lebar * tinggi))
+# # Hitung luas permukaan 
+# luas_permukaan = ((panjang * lebar) + (panjang * tinggi) + (lebar * tinggi))
 
-# Tampilkan hasil
-print("\n=== Hasil Perhitungan Balok ===")
-print("Volume balok        :", volume, "cm³")
-print("Luas permukaan balok:", luas_permukaan, "cm²")
+# # Tampilkan hasil
+# print("\n=== Hasil Perhitungan Balok ===")
+# print("Volume balok        :", volume, "cm³")
+# print("Luas permukaan balok:", luas_permukaan, "cm²")
 
 
 # Soal 3
@@ -50,8 +50,8 @@ import math
 # Program menghitung kombinasi pengambilan bola
 
 # Jumlah bola
-bola_merah = 8
-bola_biru = 6
+bola_merah = int(input("Masukkan angka bola merah:"))
+bola_biru = int(input("Masukkan angka bola biru:"))
 total_bola = bola_merah + bola_biru
 
 # Banyak bola yang diambil
