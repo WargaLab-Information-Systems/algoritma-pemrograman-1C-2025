@@ -1,0 +1,48 @@
+#Soal No.1
+harga_buku=5000
+harga_pensil=4500
+
+#jumlah barang
+jumlah_buku=3
+jumlah_pensil=2
+pajak =10
+
+#menghitung total harga barang sebelum pajak
+total_harga= harga_buku * jumlah_buku
+tota_harga= harga_pensil * jumlah_pensil
+total_belanja= harga_buku + jumlah_pensil
+
+#Soal No.2
+#c
+# Data balok
+panjang = 10
+lebar = 6
+tinggi = 4
+
+# Hitung volume
+volume = panjang * lebar * tinggi
+
+# Hitung luas permukaan
+luas_permukaan = 2 * ((panjang * lebar) + (panjang * tinggi) + (lebar * tinggi))
+
+# Cetak hasil
+print("Volume balok:", volume, "cm³")
+print("Luas permukaan balok:", luas_permukaan, "cm²")
+
+#Soal No.3
+# Jumlah bola
+bola_merah = 8
+bola_biru = 6
+total_bola = bola_merah + bola_biru
+
+# Fungsi kombinasi: C(n, r) = n! / (r! * (n-r)!)
+def kombinasi(n, r):
+    return (n, r)
+
+# Hitung banyak kombinasi mengambil 3 bola dari 14
+jumlah_kombinasi = kombinasi(total_bola, 3)
+
+print("Jumlah kombinasi pengambilan 3 bola dari 14 bola adalah:", jumlah_kombinasi)
+
+
+
