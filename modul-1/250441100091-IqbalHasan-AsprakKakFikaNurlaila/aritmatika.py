@@ -96,14 +96,15 @@
 # print ( "sisa bagi dari a % b =",a % b )
 # print ( "pangkat a ** b =",a ** b )
 
-# # Soal 6 TP: 
-# # Seorang mahasiswa membeli 3 buah buku dengan harga masing-masing Rp45.000 dan b buah pulpen dengan harga masing-masing Rp7.500. Tulisakan kode untuk soal dibawah ini:
-# # a. Buatlah variabel untuk menyimpan harga buku dan harga pulpen.
-# # b. Gunakan operator aritmatika Python untuk menghitung total biaya yang harus dibayarkan.
-# # c. Jika mahasiswa tersebut membayar dengan uang Rp200.000, gunakan operator aritmatika untuk menghitung jumlah uang kembaliannya.
-
-
 # print ("=" * 100)
+# print ("Soal TP NO 6")
+# print ("=" * 100)
+# print ("-" * 100)
+# print ("Seorang mahasiswa membeli 3 buah buku dengan harga masing-masing Rp45.000 dan b buah pulpen dengan harga masing-masing Rp7.500. Tulisakan kode untuk soal dibawah ini: ")
+# print ("a. Buatlah variabel untuk menyimpan harga buku dan harga pulpen.")
+# print ("b. Gunakan operator aritmatika Python untuk menghitung total biaya yang harus dibayarkan.")
+# print ("c. Jika mahasiswa tersebut membayar dengan uang Rp200.000, gunakan operator aritmatika untuk menghitung jumlah uang kembaliannya.")
+# print ("-" * 100)
 # print ("PriceList:")
 # harga_buku = 45000
 # harga_pulpen = 7500
@@ -136,7 +137,6 @@
 # total1 = (harga_buku * jumlah_buku) + (harga_pensil * jumlah_pensil)
 # total2_pajak = total1 * 0.10
 # total3 = total1 + total2_pajak
-
 # print("Total sebelum pajak  : Rp", total1)
 # print("Pajak 10%            : Rp", int(total2_pajak))
 # print("Total                : Rp", int(total3))
@@ -156,39 +156,20 @@
 # print("Luas Permukaan Balok =", luas_permukaan, "cm")
 
 
+# #Soal No 3 (Dinamis)
 # print ("-" * 100)
 # print ("3. Dalam sebuah kotak terdapat 8 bola merah dan 6 bola biru. Seorang anak akan mengambil 3 bola sekaligus secara acak. Buatlah program Python untuk menghitung berapa banyak kemungkinan kombinasi bola yang dapat diambil!")
 # print ("-" * 100)
-# # Soal No 3 (Dinamis)
-# def kombinasi(total_bola, bola_yang_diambil):
-#     perkalian_atas = 1
-#     perkalian_bawah = 1
-#     for hitungan in range(bola_yang_diambil):   
-#         perkalian_atas *= (total_bola - hitungan)
-#         perkalian_bawah *= (hitungan + 1)
-#     return perkalian_atas // perkalian_bawah
 
+# def kombinasi(n, r): #n=tkb,r=bd
+#     atas = 1
+#     bawah = 1
+#     for i in range(r):
+#         atas *= (n - i)    # perkalian n, n-1, ..., n-r+1
+#         bawah *= (i + 1)   # perkalian 1, 2, ..., r
+#     return atas // bawah
 # bola_merah = int(input("Jumlah bola merah: "))
-# bola_biru = int(input("Jumlah bola biru: "))
-# bola_diambil = int(input("Jumlah yang diambil sekaligus: "))
-# total_bola = bola_merah + bola_biru
-# hasil = kombinasi(total_bola, bola_diambil)
-# print("=" * 10, "Hasil Perhitungan","=" * 10)
-# print("Jumlah bola merah :", bola_merah)
-# print("Jumlah bola biru  :", bola_biru)
-# print("Total bola        :", total_bola)
-# print("Diambil sekaligus :", bola_diambil)
-# print("Kombinasi         :", hasil)
-
-
-
-harga_buku = 45000
-harga_pulpen =7500
-jumlah_buku=3
-jumlah_pulpen=2
-total_biaya=(jumlah_buku*harga_buku)+(jumlah_pulpen*harga_pulpen)
-print ("Total biaya:", total_biaya)
-uang_bayar=200000
-kembalian = uang_bayar-total_biaya
-print ("Tunai:", uang_bayar)
-print ("Kembalian:", kembalian)
+# bola_biru  = int(input("Jumlah bola biru: "))
+# bd         = int(input("Jumlah bola yang diambil: "))
+# tkb = bola_merah + bola_biru
+# print(f"Jumlah kombinasi: {kombinasi(tkb, bd)}")
