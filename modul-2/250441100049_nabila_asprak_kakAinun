@@ -1,0 +1,79 @@
+# soal no 1
+
+print(" masukkan nilai")
+nilai = int(input())
+print(" kehadiran")
+kehadiran = int(input())
+if nilai >= 85 and nilai <= 100 and kehadiran >= 90 and kehadiran <= 100:
+    print("pujian")
+else:
+    if nilai > 85:
+        print("A")
+    else:
+        if nilai >= 70 and nilai >= 84:
+            print("B")
+        else:
+            if nilai >= 60 and nilai >= 69:
+                print("C")
+            else:
+                if nilai >= 50 and nilai >= 59:
+                    print("D")
+                else:
+                    print("E")
+                if nilai >= 85 and kehadiran >= 90:
+                    print("Lulus dangan pujian")
+                else:
+                    print("Lulus")
+
+#soal N0.2
+# program menghitung harga tiket bioskop dengan berbagai diskon
+#harga normal
+harga_normal = 50000
+# input data dari pengguna
+usia = int(input("masukan usia anda: "))
+pelajar = input("apakah anda pelajar SMA dengan kartu? (ya/tidak): "). lower()
+hari = input("masukkan hari (contoh: senin, selasa, ...): "). lower()
+# inisialisasi diskon
+diskon = 0
+#cek kondisi dikon 
+if usia < 12: 
+    diskon = 50
+if pelajar == "ya" and diskon < 30: 
+    diskon = 30
+if hari == "selasa" and diskon < 20:
+    diskon = 20
+# hitung harga akhir
+harga_akhir = harga_normal - (harga_normal * diskon / 100)
+# output hasil 
+print("\n=== HASIL ===")
+print(f"diskon yang didapat: {diskon}%")
+print(f"harga tiket yang harus dibayar: Rp {int(harga_akhir)}")
+
+
+# soal No.3
+# program menghitung biaya parkir di mall
+
+# input lama parkir dan status VIP
+lama_parkir = int(input("masukan lama parkir (jam): "))
+status_VIP = input("apakah anda member VIP? (ya/tidak):" ).lower()
+
+# inisialisasi variabel tarif
+tarif_awal = 5000   # untuk 2 jam pertama
+tarif_per_jam = 3000   # untuk setian jam bberikutnya 
+maksimal_tarif = 2000   # batas maksimal per hari 
+
+# logika penentuan biaya 
+if status_VIP == "ya":
+    total = 0 
+else :
+    total = tarif_awal + (lama_parkir - 2) * tarif_per_jam
+    if total > maksimal_tarif:
+        total = maksimal_tarif
+
+# output hasil
+print("\n===== HASIL PERHITUNGAN =====")
+print(f"lama parkir   : {lama_parkir} jam ")
+print(f"status VIP   : {status_VIP.capitalize()}")
+print(f"total biaya   : RP{total:,}")
+
+
