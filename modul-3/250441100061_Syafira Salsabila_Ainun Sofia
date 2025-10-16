@@ -1,0 +1,129 @@
+# Soal 1
+# Program menampilkan bilangan prima dari 1 sampai n
+
+n = int(input("Masukkan nilai n: "))
+
+print(f "Bilangan prima dari 1 sampai {n} adalah:")
+
+# Periksa setiap bilangan dari 2 sampai n
+for i in range(2, n + 1):
+    prima = True  # Anggap i adalah bilangan prima
+
+    # Cek apakah i bisa dibagi oleh bilangan lain selain 1 dan dirinya sendiri
+    for j in range(2, int(i ** 0.5) + 1):
+        if i % j == 0:  # Jika i habis dibagi j, berarti bukan bilangan prima
+            prima = False
+            break
+
+    # Jika tidak ditemukan pembagi, berarti i adalah bilangan prima
+    if prima:
+        print(i, end=" ")
+
+
+# Soal 2
+# Simulasi sederhana mesin ATM
+
+# Misalnya NIM kamu: 25061
+# Maka PIN = XXYYY → 25 + 061 = 25061
+# Ganti nilai di bawah sesuai dengan NIM kamu
+pin_benar = 25061  
+
+# Jumlah maksimal percobaan
+maks_percobaan = 3
+percobaan = 0
+
+while percobaan < maks_percobaan:
+    try:
+        pin = int(input("Masukkan PIN (5 digit): "))
+
+        # Periksa panjang PIN
+        if len(str(pin)) != 5:
+            print("PIN harus 5 digit!")
+            continue
+        
+        # Cek PIN benar atau salah
+        if pin == pin_benar:
+            print("PIN benar, akses diterima.")
+            break
+        else:
+            percobaan += 1
+            if percobaan < maks_percobaan:
+                print("PIN salah, coba lagi.")
+            else:
+                print("Akses ditolak, kartu diblokir.")
+    except ValueError:
+        print("Input harus berupa angka!")
+
+# Soal 3
+# Program analisis kalimat sederhana
+
+# Meminta input dari user
+kalimat = input("Masukkan sebuah kalimat: ")
+
+# Inisialisasi variabel untuk menghitung vokal dan konsonan
+vokal = 0
+konsonan = 0
+
+# Daftar huruf vokal
+huruf_vokal = "aiueoAIUEO"
+
+# Perulangan untuk menghitung huruf vokal dan konsonan
+for huruf in kalimat:
+    if huruf.isalpha():  # Mengecek apakah karakter adalah huruf
+        if huruf in huruf_vokal:
+            vokal += 1
+        else:
+            konsonan += 1
+
+# Menghitung jumlah kata (dipisahkan oleh spasi)
+jumlah_kata = len(kalimat.split())
+
+# Menampilkan hasil
+print("Hasil Analisis:")
+print("Jumlah huruf vokal    :", vokal)
+print("Jumlah huruf konsonan :", konsonan)
+print("Jumlah kata           :", jumlah_kata)
+
+# Soal 4
+# Program Struk Pembelian IndoMei
+
+while True:
+    print("=== Program Struk Pembelian IndoMei ===")
+    
+    # Meminta nama pembeli
+    nama = input("Masukkan nama pembeli: ")
+
+    # Inisialisasi daftar barang dan total harga
+    daftar_barang = []
+    total = 0
+
+    # Meminta input barang dan harga
+    while True:
+        barang = input("Masukkan nama barang (atau ketik 'selesai' untuk berhenti): ")
+
+        if barang.lower() == "selesai":
+            break
+
+        try:
+            harga = float(input(f"Masukkan harga {barang}: "))
+            daftar_barang.append((barang, harga))  # Simpan dalam bentuk tuple (nama, harga)
+            total += harga
+        except ValueError:
+            print("Harga harus berupa angka!")
+
+    # Tampilkan struk pembelian
+    print("======= STRUK PEMBELIAN =======")
+    print("Nama Pembeli :", nama)
+    print("------------------------------")
+    for barang, harga in daftar_barang:
+        print(f"{barang:20} Rp{harga:,.0f}")
+    print("------------------------------")
+    print(f"Total Harga   : Rp{total:,.0f}")
+    print("Terima kasih telah berbelanja di IndoMei.")
+    print("==============================")
+
+    # Tanya apakah ada pembeli berikutnya
+    lanjut = input("Apakah ada pembeli berikutnya? (y/n): ")
+    if lanjut.lower() != "y":
+        print("Program selesai. Terima kasih!")
+        break
