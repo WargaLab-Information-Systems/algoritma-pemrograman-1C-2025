@@ -1,0 +1,120 @@
+# Soal Nomor 1
+# Program menampilkan bilangan prima dari 1 sampai n
+
+n = int(input("Masukkan batas angka (n): "))
+
+print(f"\nBilangan prima dari 1 sampai {n} adalah:")
+
+for i in range(2, n + 1):
+    prima = True  # anggap dulu semua bilangan adalah prima
+    for j in range(2, i):
+        if i % j == 0:  # jika ada pembagi lain
+            prima = False
+            break
+    if prima:
+        print(i, end=" ")
+
+# Soal Nomor 2
+# Simulasi sederhana mesin ATM
+
+pin_benar = 25041
+kesempatan = 3
+
+print("=== Simulasi Mesin ATM ===")
+
+for i in range(kesempatan):
+    pin_input = input("Masukkan PIN (5 digit): ")
+
+    # Cek apakah input berupa angka
+    if not pin_input.isdigit():
+        sisa = kesempatan - (i + 1)
+        if sisa > 0:
+            print(f"PIN harus berupa angka! Kesempatan tersisa: {sisa}\n")
+        else:
+            print("PIN harus berupa angka! Akses ditolak, kartu diblokir ")
+        continue
+
+    pin = int(pin_input)
+
+    if pin == pin_benar:
+        print("PIN benar, akses diterima")
+        break
+    else:
+        sisa = kesempatan - (i + 1)
+        if sisa > 0:
+            print(f"PIN salah, coba lagi. Kesempatan tersisa: {sisa}\n")
+        else:
+            print("Akses ditolak, kartu diblokir")
+
+# Soal Nomor 3
+# Program analisa kalimat
+
+# Input kalimat dari pengguna
+kalimat = input("Masukkan sebuah kalimat: ")
+
+# Daftar huruf vokal 
+vokal = "aiueoAIUEO"
+
+# Variabel penghitung
+jumlah_vokal = 0
+jumlah_konsonan = 0
+jumlah_kata = 1  # mulai dari 1 karena kata dipisahkan oleh spasi
+
+# Hitung jumlah huruf vokal dan konsonan
+for huruf in kalimat:
+    if huruf in vokal:
+        jumlah_vokal = jumlah_vokal + 1
+    elif huruf == " ":
+        jumlah_kata = jumlah_kata + 1
+    elif huruf.isalpha():  # hanya huruf (abaikan angka/tanda baca)
+        jumlah_konsonan = jumlah_konsonan + 1
+
+# Tampilkan hasil analisa
+print("\n=== HASIL ANALISA KALIMAT ===")
+print("Kalimat:", kalimat)
+print("Jumlah huruf vokal   :", jumlah_vokal)
+print("Jumlah huruf konsonan:", jumlah_konsonan)
+print("Jumlah kata          :", jumlah_kata)
+
+# Soal Nomor 4
+# Program struk pembelian IndoMei
+
+lanjut = "y"
+
+while lanjut == "y":
+    print("\n===== STRUK PEMBELIAN INDOMEI =====")
+
+    # Input nama pembeli
+    nama = input("Masukkan nama pembeli: ")
+
+    # Daftar barang dan harga
+    daftar_barang = []
+    daftar_harga = []
+
+    # Input barang
+    barang = ""
+    while barang != "selesai":
+        barang = input("Masukkan nama barang (ketik 'selesai' jika sudah): ")
+        if barang != "selesai":
+            harga = int(input("Masukkan harga barang: "))
+            daftar_barang.append(barang)
+            daftar_harga.append(harga)
+
+    # Hitung total harga manual
+    total = 0
+    for h in daftar_harga:
+        total = total + h
+
+    # Tampilkan struk
+    print("\n========== STRUK PEMBELIAN ==========")
+    print("Nama Pembeli:", nama)
+    print("------------------------------------")
+    for i in range(len(daftar_barang)):
+        print(str(i + 1) + ".", daftar_barang[i], "- Rp", daftar_harga[i])
+    print("------------------------------------")
+    print("Total Harga: Rp", total)
+    print("Terima kasih telah berbelanja di toko ayies")
+    print("=====================================")
+
+    # Tanya apakah ada pembeli berikutnya
+    lanjut = input("\nApakah ada pembeli berikutnya? (y/n): ")
