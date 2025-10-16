@@ -1,0 +1,49 @@
+# Tugas no 1
+
+# buku = 50000
+# pensil = 4500
+
+# jumlah_buku = 3
+# jumlah_pensil = 2
+# pajak = 10/100
+
+# total_buku = jumlah_buku * buku
+# total_pensil = jumlah_pensil * pensil
+# total_belanja = total_buku + total_pensil
+
+# total = (total_buku + total_pensil)
+# pajak = total_belanja * pajak
+# bayar = total_belanja + pajak
+
+# print(f"total: {total}")
+# print(f"pajak (10%) : {int(pajak)}")
+# print(f"bayar: {int(bayar)}")
+
+# Tugas no 2
+
+p = int(input("masukkan panjang: "))
+l = int(input("masukkan lebar: "))
+t = int(input("masukkan tinggi: "))
+
+volume = p * l * t
+luas = 2* (p * l + p * t + l * t)
+
+print(f"volume: {volume}")
+print(f"luas permukaan: {luas}")
+
+# Tugas no 3
+
+total_bola_merah = int(input("masukkan angka: "))
+total_bola_biru = int(input("masukkan angka: "))
+total_bola = int(input("masukkan total bola: "))
+a = int(input("masukkan jumlah bola yang diambil: "))
+
+nomerator = total_bola * (total_bola-1) * (total_bola-2)
+denominator = a * (a-1) * (a-2)
+
+kombinasi = nomerator // denominator
+
+print(f"dumerator, {nomerator}")
+print(f"denominator, {denominator}")
+print(f"kemungkinan kombinasi, {kombinasi}")
+
