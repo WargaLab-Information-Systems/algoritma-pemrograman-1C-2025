@@ -1,0 +1,124 @@
+# soal no.1
+#program menampilkan bilangan prima dari 1 sampai n
+# input batas akhir
+n = int(input("masukkan nilai  : "))
+print(f"bilangan prima dari 1 sampai {n} adalah:")    # f untuk memanggil variabel
+for i in range(2,n+1): # mulai dari 2 karena 1 bukan bilangan prima   # range membuat urutan angka
+    #asumsi awal:  i adalah bilangan prima 
+    prima = True
+    #cek apakah i memiliki faktor selain 1 dan dirinya sendiri
+    for j in range(2,int(i ** 0.5) + 1): #cukup cek hingga akar i  #j untuk menyatakan bilanga imagener
+        if i % j ==0:
+          prima = False
+        break    # keluar secara paksa
+    #jika prima tetap true,maka i adalah bilangan prima
+    if prima:
+        print (i,end="")
+
+# soal no.2
+# Program simulasi sederhana mesin ATM
+
+# PIN yang benar (contoh format: XXYYY → 2 digit NIM awal + 3 digit NIM akhir)
+pin_benar = 25103 # <-- ganti dengan PIN sesuai format NIM kamu
+
+# Jumlah kesempatan
+kesempatan = 3
+
+print("=== Selamat Datang di Mesin ATM ===")
+
+for percobaan in range(1, kesempatan + 1):   #membuat urutan angka #for perulangan untuk mengulangi block kode
+    try:    #untuk mengubah nilai menjadi string tesk
+        pin = int(input("Masukkan PIN (5 digit): "))
+
+        # Cek panjang PIN
+        if len(str(pin)) != 5:    # len untuk menghitung jumlah elemen dalam suatu objek  #untuk mengubah nilai menjadi string
+            print("PIN harus 5 digit angka!")
+            continue   #melewati satu bagian dan lanjut kebagian berikutnya
+
+        # Cek kecocokan PIN
+        if pin == pin_benar:
+            print("PIN benar, akses diterima.")
+            break   #berhenti dan keluar dari loop
+        else:
+            print("PIN salah, coba lagi.")
+
+    except ValueError:  #untuk menangani pengecualian yang terjadi ketika suatu fungsi menerima argumen
+        print("PIN harus berupa angka!")
+
+    # Jika sudah 3 kali gagal
+    if percobaan == kesempatan:
+        print("Akses ditolak, kartu diblokir.")
+
+
+# soal no.3
+# Program untuk menganalisis kalimat
+
+# Meminta input kalimat dari pengguna
+kalimat = input("Masukkan sebuah kalimat: ")
+
+# Inisialisasi variabel
+vokal = "aiueoAIUEO"
+jumlah_vokal = 0
+jumlah_konsonan = 0
+
+# Menghitung jumlah huruf vokal dan konsonan
+for huruf in kalimat:   #for perulangan untuk mengulagi block kode
+    if huruf.isalpha():  # hanya menghitung huruf atau mengecek apakah karakter huruf (a-z / A-Z)
+        if huruf in vokal:
+            jumlah_vokal += 1
+        else:
+            jumlah_konsonan += 1
+
+# Menghitung jumlah kata (dipisahkan oleh spasi)
+jumlah_kata = len(kalimat.split())  #len untuk menghitung jumlah elemen #split untuk memisahkan string menjadi list berdasarkan pemisah tertentu                               
+# Menampilkan hasil analisis
+print("\n=== Hasil Analisis Kalimat ===")
+print(f"Kalimat       : {kalimat}")
+print(f"Jumlah vokal  : {jumlah_vokal}")
+print(f"Jumlah konsonan : {jumlah_konsonan}")
+print(f"Jumlah kata   : {jumlah_kata}")
+
+# soal no.4
+# progaram struk pembelian indomei
+
+print("=== program struk pembelian indomei")
+while True:   #adalah perulanagn yang tak terhingga
+    # Input data pembeli
+    nama = input("Masukkan nama pembeli: ")
+    daftar_barang = []     #kurung siku berfungsi untuk mengakses indeks list/string
+    daftar_harga = []
+
+    while True:
+        barang = input("Masukkan nama barang (atau ketik 'selesai' untuk selesai): ")
+        if barang.lower() == "selesai": # lower metode string yang mengubah huruf besar menjadi huruf kecil
+            break #untuk menghentikan perulanagan secara paksa
+        try:     
+            harga = int(input(f"Masukkan harga {barang}: Rp"))
+        except ValueError:     
+            print("Harga harus berupa angka! Coba lagi.")
+            continue  #melewati satu bagian kebagian berikutnya
+        daftar_barang.append(barang)  #untuk menambahkan satu item ke akhir daftar yang sudah ada
+        daftar_harga.append(harga)
+    # Tampilkan struk
+   # tampilkan_struk(nama, daftar_barang, daftar_harga)
+
+    # Tanya apakah ada pembeli berikutnya
+    lanjut = input("Apakah ada pembeli berikutnya? (y/n): ").lower()
+    if lanjut != "y":
+        print("\nProgram selesai. Terima kasih!\n") #untuk pindah ke halaman berikutnya
+        break # berhenti secara paksa
+def tampilkan_struk(nama_pembeli, daftar_barang, daftar_harga):  #kata kunci yang digunakan untuk mendefinisikan atau membuat sebuah fungsi
+    print("\n" + "="*40)
+    print("        Struk Pembelian IndoMei")
+    print("="*40)
+    print(f"Nama Pembeli : {nama_pembeli}")
+    print("-"*40)
+    total = 0
+    for barang, harga in zip(daftar_barang, daftar_harga): #for untuk mengulang serangkaian item dari sebuah urutan # zip menggabungkan dua atau lebih objek iterable
+        print(f"{barang:<25} Rp{harga:>10,}")
+        total += harga
+    print("-"*40)
+    print(f"Total Harga:{' ':15} Rp{total:>10,}")
+    print("="*40)
+    print("Terima kasih telah berbelanja di IndoMei.")
+    print("="*40 + "\n") #\n untuk membuat baris baru
