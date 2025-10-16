@@ -1,6 +1,6 @@
-##Note: Jalankan kode satu persatu
-## Modul 2 Pendahuluan
-## Penyeleksian Kondisi
+# #Note: Jalankan kode satu persatu
+# # Modul 2 Pendahuluan
+# # Penyeleksian Kondisi
 
 # #Program perintah if
 # nama = "python"
@@ -56,7 +56,7 @@
 #     print('Tebakan Anda terlalu besar')
 # print('selesai')
 
-## 2. contoh program penyeleksian kondisi
+# # 2. contoh program penyeleksian kondisi
 # a = int(input("Masukkan umur: "))
 # if a <= 15:
 #     print("Muda")
@@ -103,8 +103,8 @@
 #     print("angka anda not found")
 
 
-##Tugas Pendahuluan Modul 2
-##Nomor 2  
+# #Tugas Pendahuluan Modul 2
+# #Nomor 2  
 # #Apa perbedaan antara if, if-else, if-elif-else, dan if bersarang? Jelaskan dengan Bahasa kalian sendiri dan berikan contoh kodenya!
 # # contoh if
 # nilai = 80
@@ -139,18 +139,18 @@
 # else:
 #     print("Uang tidak cukup")
 
-#Nomor 5
-#5. Buatlah Program dengan Studi Kasus Berikut :
-#Sebuah jalan tol memberikan ketentuan pembayaran sebagai berikut: Tarif
-#dasar tol berbeda sesuai jenis kendaraan:
-#• Mobil pribadi → Rp15.000
-#• Truk kecil → Rp25.000
-#• Truk besar → Rp40.000
-#Diskon tarif tol berlaku jika:
-#• Jika pembayaran menggunakan e-money → diskon 10%
-#• Jika pembayaran menggunakan e-money dan dilakukan pada jam sepi
-#(23.00 – 05.00) → diskon 20%
-#• Jika pembayaran tunai → tidak ada diskon
+# Nomor 5
+# 5. Buatlah Program dengan Studi Kasus Berikut :
+# Sebuah jalan tol memberikan ketentuan pembayaran sebagai berikut: Tarif
+# dasar tol berbeda sesuai jenis kendaraan:
+# • Mobil pribadi → Rp15.000
+# • Truk kecil → Rp25.000
+# • Truk besar → Rp40.000
+# Diskon tarif tol berlaku jika:
+# • Jika pembayaran menggunakan e-money → diskon 10%
+# • Jika pembayaran menggunakan e-money dan dilakukan pada jam sepi
+# (23.00 – 05.00) → diskon 20%
+# • Jika pembayaran tunai → tidak ada diskon
 
 # # Program Hitung Tarif Tol
 # kendaraan = input("Masukkan jenis kendaraan:").lower()
@@ -217,7 +217,6 @@
 #     print("benar")
 # elif angka1 <= 11:
 #     print("salah")
-
 # if angka1 < = 11:
 #     print("pertengahan")   
 
@@ -249,80 +248,79 @@
 
 
 
-# # # Tugas Praktikum Modul 2
-# # Soal No. 1
-# Note: batasannya 0 - 100
-print("masukkan nilai")
-nilai = int(input())
-if nilai > 100:
-    print("Invalid!")
-else:
-    if nilai >= 85:
-        print("A")
-        print("masukkan kehadiran")
-        kehadiran = int(input())
-        if kehadiran >= 90:
-            print("kelulusan:lulus dengan pujian")
-    else:
-        if nilai >= 70:
-            print("B")
-        else:
-            if nilai >= 60:
-                print("C")
-            else:
-                if nilai >= 50:
-                    print("D")
-                else:
-                    if nilai < 0:
-                        print("Invalid!")
-                    else:
-                        print("E")
+# # # # Tugas Praktikum Modul 2
+# # # Soal No. 1
+# # Note: batasannya 0 - 100
+# print("masukkan nilai")
+# nilai = int(input())
+# if nilai > 100:
+#     print("Invalid!")
+# else:
+#     if nilai >= 85:
+#         print("A")
+#         print("masukkan kehadiran")
+#         kehadiran = int(input())
+#         if kehadiran >= 90:
+#             print("kelulusan:lulus dengan pujian")
+#     else:
+#         if nilai >= 70:
+#             print("B")
+#         else:
+#             if nilai >= 60:
+#                 print("C")
+#             else:
+#                 if nilai >= 50:
+#                     print("D")
+#                 else:
+#                     if nilai < 0:
+#                         print("Invalid!")
+#                     else:
+#                         print("E")
 
 
-# # Soal No. 2
-usia = int(input("Masukkan usia: "))
-pelajar = input("Apakah pelajar SMA dengan kartu pelajar? (ya/tidak): ")
-hari = input("Hari: ")
-harga = 50000
-hari = hari.lower()
-pelajar = pelajar.lower()
-hari_selasa = (hari == "selasa")
-pelajar_sma = (pelajar == "ya")
-diskon = 0
-if usia < 12:
-    diskon = 0.5
-elif pelajar_sma:
-    diskon = 0.3
-elif hari_selasa:
-    diskon = 0.2
-total = harga * (1 - diskon)
-print("Diskon diterapkan:", int(diskon * 100), "%")
-print("Total yang harus dibayar: Rp", int(total))
+# # # Soal No. 2
+# usia = int(input("Masukkan usia: "))
+# pelajar = input("Apakah pelajar SMA dengan kartu pelajar? (ya/tidak): ")
+# hari = input("Hari: ")
+# harga = 50000
+# hari = hari.lower()
+# pelajar = pelajar.lower()
+# hari_selasa = (hari == "selasa")
+# pelajar_sma = (pelajar == "ya")
+# diskon = 0
+# if usia < 12:
+#     diskon = 0.5
+# elif pelajar_sma:
+#     diskon = 0.3
+# elif hari_selasa:
+#     diskon = 0.2
+# total = harga * (1 - diskon)
+# print("Diskon diterapkan:", int(diskon * 100), "%")
+# print("Total yang harus dibayar: Rp", int(total))
 
-# ## Soal No. 3
-lama = float(input("Masukkan lama parkir (jam): "))
-vip = input("Apakah member VIP? (ya/tidak): ").lower()
-biaya = 0
-if vip == "ya":
-    biaya = 0
-else:
-    if lama <= 24:
-        jam = int(lama)
-        if lama > jam:
-            jam += 1
-        if jam <= 2:
-            biaya = 5000
-        else:
-            biaya = 5000 + (jam - 2) * 3000
-        if biaya > 20000:
-            biaya = 20000
-    else:
-        biaya = 20000 
-        sisa_jam = lama - 24
-        jam_tambahan = int(sisa_jam)
-        if sisa_jam > jam_tambahan:
-            jam_tambahan += 1
-        biaya += jam_tambahan * 3000
-print("Total biaya parkir: Rp", int(biaya))
-
+# # ## Soal No. 3
+# lama = float(input("Masukkan lama parkir (jam): "))
+# vip = input("Apakah member VIP? (ya/tidak): ").lower()
+# biaya = 0
+# if vip == "ya":
+#     biaya = 0
+# else:
+#     if lama <= 24:
+#         jam = int(lama)
+#         if lama > jam:
+#             jam += 1
+#         if jam <= 2:
+#             biaya = 5000
+#         else:
+#             biaya = 5000 + (jam - 2) * 3000
+#         if biaya > 20000:
+#             biaya = 20000
+#     else:
+#         biaya = 20000 
+#         sisa_jam = lama - 24
+#         jam_tambahan = int(sisa_jam)
+#         if sisa_jam > jam_tambahan:
+#             jam_tambahan += 1
+#         biaya += jam_tambahan * 3000
+# print("Total biaya parkir: Rp", int(biaya))
 
