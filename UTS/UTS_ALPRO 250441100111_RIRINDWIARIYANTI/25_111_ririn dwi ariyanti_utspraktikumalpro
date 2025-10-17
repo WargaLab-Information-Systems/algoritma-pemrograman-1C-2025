@@ -1,0 +1,33 @@
+print ("===SELAMAT DATANG DI RENTAL MOTOR ACONK===")
+print ("1.motor matic-Rp 500000")
+print ("2.motor trail-Rp 100000")
+print ("3.motor sport-75000")
+
+total_harga=0
+
+#masukkan barang yang disewa
+pilihan = input("apa yang kamu sewa (motor matic/motor trail/motor sport)?").lower()
+
+if pilihan == "motor matic":
+    harga = 500000
+elif pilihan == "motor trail":
+    harga = 100000
+elif pilihan == "motor sport":
+    harga = 75000
+else :
+    print ("pilihan anda tidak ada")
+    harga = 0
+
+#lama waktu sewa
+sewa = input ("berapa lama kamu sewa?")
+
+print (f"\nTotal_sewa = (pilihan*sewa) , {total_harga}:")
+
+if asuransi >1500000:
+    total_sewa=+
+    
+#diskon kupon
+kupon = input("Apakah pelanggan memiliki kupon AconkGG? (y/n): ").lower()
+if kupon == 'y':
+    total_setelah_diskon *= 0.05
+    print("Diskon kupon 5% diterapkan!")
