@@ -1,0 +1,1 @@
+print("soal No 1")
