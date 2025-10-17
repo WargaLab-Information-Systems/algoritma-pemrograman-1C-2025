@@ -1,0 +1,26 @@
+# Program rental motor aconk
+motor_matic = 50000
+motor_trail = 100000
+motor_sport = 75000
+
+# Memasukkan 3 pilihan motor
+print ("Masukkan nilai motor matic: Rp")
+print("Masukkan nilai motor trail: Rp")
+print("Masukkan nilai motor sport: Rp")
+
+# Memasukkan nilai asuransi
+maks_persewaan = 3
+harga_sewa = 15000
+print("Masukkan nilai harga sewa: Rp")
+
+# Memasukkan subtotal
+subtotal = 150000
+print("Masukkan nilai subtotal: Rp")
+
+# Menghitung diskon
+diskon = 0.10
+while True:
+    diskon > subtotal
+
+
+Program di atas adalah contoh awal dari sebuah sistem sederhana untuk menghitung biaya sewa motor, tetapi masih memiliki beberapa kekurangan dalam logika dan struktur kodenya. Pada bagian awal, program mendefinisikan tiga variabel yaitu motor_matic, motor_trail, dan motor_sport, yang masing-masing berisi harga sewa untuk jenis motor matic, trail, dan sport. Setelah itu, terdapat beberapa perintah print() yang hanya menampilkan teks ke layar seperti “Masukkan nilai motor matic: Rp”, namun belum meminta input karena tidak menggunakan fungsi input(). Kemudian, program mendefinisikan beberapa variabel tambahan seperti maks_persewaan untuk membatasi jumlah motor yang bisa disewa, harga_sewa untuk harga dasar sewa, dan subtotal untuk total sementara biaya sewa. Akan tetapi, variabel-variabel ini hanya diberi nilai tetap tanpa perhitungan nyata. Pada bagian akhir, program mencoba membuat perhitungan diskon dengan mendefinisikan diskon = 0.10, namun penggunaan while True: tidak tepat karena menyebabkan perulangan tak terbatas tanpa adanya kondisi berhenti atau operasi perhitungan di dalamnya. Secara keseluruhan, program ini menunjukkan konsep dasar dari pengaturan harga sewa motor, namun masih perlu diperbaiki dengan menambahkan fungsi input() untuk menerima data dari pengguna dan rumus perhitungan untuk menghitung total biaya dan diskon secara benar.
