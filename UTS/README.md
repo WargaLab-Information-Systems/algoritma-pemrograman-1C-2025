@@ -1,8 +1,3 @@
-# Repository praktikum Algoritma Pemrograman 1A-2025
-
-**Repository Praktikum ALPRO-1A-2025.**
-
-Kumpulkan Tugas di folder ini yang sudah dibuat, penamaan folder dengan **format NIM-NamaLengkap-NamaLengkapAsprak**, dan untuk nama tidak menggunakan spasi, namun diganti dengan huruf kapital di setiap nama atau awal kalimat
-contoh: **230441100026-Ar'raffiAbqoriNurAzizi-AsprakKakRapi**
-
-Kumpulkan tugas yang sudah dibuat di folder yang sudah disediakan dan kumpulkan tugas ketika sudah melakukan asistensi kepada Asisten Praktikum.
+Pada program di atas, saya membuat bagian awal dari program rental motor yang bertujuan untuk menampilkan daftar jenis motor yang dapat disewa dan menentukan harga sewanya. Program ini menggunakan beberapa perintah print() untuk menampilkan menu pilihan motor, yaitu motor matic, motor trail, dan motor sport. Kemudian, saya membuat tiga variabel yaitu motor_matic, motor_trail, dan motor_sport yang masing-masing berisi harga sewa per hari. Selain itu, saya juga menambahkan variabel ansuransi, diskon, dan diskon_tambahan untuk menampung nilai biaya tambahan dan potongan harga yang nantinya akan digunakan dalam perhitungan total biaya sewa.
+Pada program di atas, saya membuat bagian awal dari program rental motor yang bertujuan untuk menampilkan daftar jenis motor yang dapat disewa dan menentukan harga sewanya. Program ini menggunakan beberapa perintah print() untuk menampilkan menu pilihan motor, yaitu motor matic, motor trail, dan motor sport. Kemudian, saya membuat tiga variabel yaitu motor_matic, motor_trail, dan motor_sport yang masing-masing berisi harga sewa per hari. Selain itu, saya juga menambahkan variabel ansuransi, diskon, dan diskon_tambahan untuk menampung nilai biaya tambahan dan potongan harga yang nantinya akan digunakan dalam perhitungan total biaya sewa.
+Secara keseluruhan, kode ini baru sebatas menyiapkan tampilan awal dan nilai-nilai dasar untuk program rental motor, tetapi belum memenuhi seluruh ketentuan soal karena masih belum bisa memproses input pengguna, menghitung biaya sewa secara otomatis, maupun menampilkan hasil akhir. Dengan demikian, program perlu diperbaiki dan dilengkapi agar dapat berjalan sesuai fungsi yang diharapkan.
