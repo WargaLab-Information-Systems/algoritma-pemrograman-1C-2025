@@ -1,0 +1,38 @@
+#program rental montor aconk 
+
+#jenis jenis montor
+Montor_matic = 50000
+Montor_trail = 100000
+Montor_sport = 75000
+asuransi = 15000
+sewa = 0
+diskon = 0.10
+diskon_tambahan = 0.5
+
+print ("masukkan jenis montor: ")
+print ("sewa selama berapa hari: ")
+
+
+if sewa >= hari:
+         
+         kendaraan = "montor matic"
+        jumlah = Montor_matic-asuransi
+        print(f"mendapatkan asuransi sebesar:" {jumlah})
+        subtotal = diskon * jumlah
+        print(f"subtotal" {subtotal})
+elif sewa >= hari:
+        kendaraan = "montor sport"
+        jumlah = montor_sport-asuransi
+        print(f"mendapatkan asuransi sebesar:" {jumlah})
+        subtotal = diskon * jumlah
+        print(f"subtotal" {subtotal})
+elif sewa >= hari:
+        kendaraan = "montor trial"
+        jumlah= montor_trial-asuransi
+        print(f"mendapatkan asuransi sebesar:" {jumlah})
+        subtotal = diskon * jumlah
+        print(f"subtotal" {subtotal})
+else :
+    print("print tidak ada asuransi")
+
+        
