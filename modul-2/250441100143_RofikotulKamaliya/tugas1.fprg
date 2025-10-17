@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal no1"/>
+        <attribute name="authors" value="HP"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-08 12:38:06 PM"/>
+        <attribute name="created" value="SFA7TEFQVE9QLVRTNUo2MlZWOzIwMjUtMTAtMDc7MDY6Mjk6MDcgUE07MjUxNg=="/>
+        <attribute name="edited" value="SFA7TEFQVE9QLVRTNUo2MlZWOzIwMjUtMTAtMDg7MTI6Mzg6MDYgUE07MzsyNjIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nilai, kehadiran" type="Integer" array="False" size=""/>
+            <output expression="&quot;Masukkan nilai&quot;" newline="True"/>
+            <input variable="nilai"/>
+            <if expression="nilai&gt;=85 and nilai&lt;=100">
+                <then>
+                    <output expression="&quot;Nilai A&quot;" newline="True"/>
+                    <output expression="&quot;Masukkan persentase kehadiran&quot;" newline="True"/>
+                    <input variable="kehadiran"/>
+                    <if expression="kehadiran&gt;=90">
+                        <then>
+                            <if expression="kehadiran&lt;=100">
+                                <then>
+                                    <output expression="&quot;Lulus dengan pujian&quot;" newline="True"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Persentase kehadiran kurang dari 90%&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="nilai&lt;70 and nilai&gt;=84">
+                        <then>
+                            <output expression="&quot;Nilai B&quot;" newline="True"/>
+                            <output expression="&quot;Masukkan persentase kehadiran&quot;" newline="True"/>
+                            <input variable="Kehadiran"/>
+                            <if expression="kehadiran&gt;=90">
+                                <then>
+                                    <output expression="&quot;Lulus dengan pujian&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Lulus&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="nilai&lt;60 and nilai&gt;=69">
+                                <then>
+                                    <output expression="&quot;Nilai C&quot;" newline="True"/>
+                                    <output expression="&quot;Tidak lulus&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="nilai&lt;50 and nilai&gt;=59">
+                                        <then>
+                                            <output expression="&quot;Nilai D&quot;" newline="True"/>
+                                            <output expression="&quot;Tidak lulus&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Nilai E&quot;" newline="True"/>
+                                            <output expression="&quot;Tidak lulus&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
