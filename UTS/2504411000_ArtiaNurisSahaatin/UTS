@@ -1,0 +1,22 @@
+print("=== Pilihlah Jenis Motor Yang Ingin di Sewa===")
+print("1. motor matic")
+print("2. Motor Trail")
+print("3. Motor Sport")
+
+matic = 50000
+trail = 100000
+sport = 75000
+
+while True:
+    if penyewa in range(penyewa >3: )
+    print()
+    elif i in range(lebih dari 150000)
+    print()
+    break
+
+
+
+
+
+print(lebih dari tiga hari: )
+print()
