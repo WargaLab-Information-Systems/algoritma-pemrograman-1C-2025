@@ -1,0 +1,78 @@
+# Tugas no 1
+
+# print("masukkan jumlah nilai mahasiswa(0-100)")
+# nilai = int(input())
+# print("nilai = " + str(nilai))
+# if nilai >= 85:
+#     print("nilai A")
+#     print("masukkan jumlah persentase kehadiran")
+#     kehadiran = int(input())
+#     print("kehadiran = " + str(kehadiran) + "%")
+#     if kehadiran >= 90:
+#         print("Lulus dengan Pujian")
+# else:
+#     if nilai >= 70:
+#         print("nilai B")
+#     else:
+#         if nilai >= 60:
+#             print("nilaii C")
+#         else:
+#             if nilai > 50:
+#                 print("nilai D")
+#             else:
+#                 print("nilai E")
+
+
+# Tugas no 2
+
+#Harga tiket normal
+# harga_normal = 50000
+
+# usia = int(input("Masukkan usia penonton: "))
+# pelajar = input("Apakah pelajar SMA (ya/tidak): ").lower()
+# hari = input("Masukkan hari: ").lower()
+
+# diskon = 0
+
+# if usia < 12:
+#     diskon = max(diskon, 50)
+# if pelajar == "ya":
+#     diskon = max(diskon, 30)
+# if hari == "selasa":
+#     diskon = max(diskon, 20)
+
+# harga_bayar = harga_normal - (harga_normal * diskon / 100)
+
+# print("\n= HASIL PEMBAYARAN TIKET BIOSKOP =")
+# print("Usia Penonton     :", usia, "tahun")
+# print("Status Pelajar    :", pelajar)
+# print("Hari Menonton     :", hari)
+# print("Diskon Diterapkan :", diskon, "%")
+# print("Total Bayar       : Rp", int(harga_bayar))
+# print("= TERIMA KASIH SUDAH MENONTON =")
+
+# Tugas no 3
+
+lama_parkir = int(input("Masukkan lama parkir (jam): "))
+vip = input("Apakah Anda member VIP (ya/tidak): ").lower()
+
+biaya = 0
+
+if vip == "ya":
+    biaya = 0
+else:
+    
+    if lama_parkir <= 2:
+        biaya = 5000
+    else:
+        biaya = 5000 + (lama_parkir - 2) * 3000
+    
+    
+    if biaya > 20000:
+        biaya = 20000
+
+
+print("\n= HASIL PERHITUNGAN PARKIR =")
+print("Lama Parkir     :", lama_parkir, "jam")
+print("Status VIP       :", vip)
+print("Total Biaya      : Rp", biaya)
