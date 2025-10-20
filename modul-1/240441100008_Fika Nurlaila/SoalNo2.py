@@ -1,1 +1,0 @@
-print("soal no 2")
