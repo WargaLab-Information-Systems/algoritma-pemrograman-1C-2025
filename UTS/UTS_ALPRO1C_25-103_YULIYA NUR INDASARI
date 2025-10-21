@@ -1,0 +1,14 @@
+#program rental motor
+motor metic =50.000.00
+motor trail=100.000.00
+motor sport=75.000.00
+  asuransi sebesar=15.0000.00
+   diskon=10%
+   (f"(masukkan harga sewa)
+    (f'('masukkan harga penyewa'))
+    float("harga_diskon)
+
+
+
+
+
