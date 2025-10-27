@@ -139,32 +139,6 @@
 #     i += 1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # # Tugas praktikum no 2
 # print("--------------------- TUGAS NO 2 ---------------------")
 # print("SOAL : Pak Wowo bekerja di perusahaan besar dengan dua shift, pagi dan malam. Program menghitung total gaji mingguan dengan memperhitungkan lembur dan bonus shift malam.")
@@ -225,35 +199,6 @@
 # print("Total jam lembur minggu ini:", total_jam_lembur)
 # print("Total bonus shift malam minggu ini: Rp", total_bonus_shift)
 # print("Total gaji Pak Wowo selama seminggu: Rp", total_gaji)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
