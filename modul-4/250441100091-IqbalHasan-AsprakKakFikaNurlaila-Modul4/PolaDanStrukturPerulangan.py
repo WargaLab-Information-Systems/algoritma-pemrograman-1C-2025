@@ -203,15 +203,9 @@
 #     elif jam_lembur == 4:
 #         gaji_harian += 100000
 #         total_jam_lembur += 4
-#     elif jam_lembur == 5:
-#         gaji_harian += 50000 
-#         total_jam_lembur += 5
 #     elif jam_lembur == 6:
-#         gaji_harian += 150000
+#         gaji_harian += 200000
 #         total_jam_lembur += 6
-#     elif jam_lembur == 7:
-#         gaji_harian += 50000
-#         total_jam_lembur += 7
 #     elif jam_lembur == 8:
 #         gaji_harian += 300000
 #         total_jam_lembur += 8
@@ -288,17 +282,3 @@
 #     for kanan in range(i, 0, -1):
 #         print(format(kanan, '2d'), end='')
 #     print()
-
-
-
-
-
-
-
-for i in range (1,5):
-    for j in range (1, i+1):
-        print (j, end=" ")
-    
-    for k in range (5-i):
-        print (" ", end=" " )
-    print()
