@@ -7,12 +7,12 @@ for i in range(1, n + 1):
         print(j, end=' ')
     
     # Loop untuk ruang kosong di tengah: cetak 2 spasi
-    for k in range((i  - 1) * 3):
+    for k in range((i  - 1) * 2):
         print(" ", end=' ')
     
     # Loop untuk sisi kanan piramida: cetak angka dari i hingga 1
     for j in range(n - i + 1, 0, -1):
-        print(j, end='')
+        print(j, end=' ')
     
     # Pindah ke baris baru
     print()
