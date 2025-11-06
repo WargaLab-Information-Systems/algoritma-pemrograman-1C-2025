@@ -25,5 +25,3 @@ if not spasi:
 print("Jumlah huruf vokal:", vokal)
 print("Jumlah huruf konsonan:", konsonan)
 print("Jumlah kata dalam kalimat:", kata)
-
-# GAUSAH LOWER

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="s"/>
+        <attribute name="authors" value="Acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-20 11:08:22 AM"/>
+        <attribute name="created" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0yMDsxMDo1NToxNyBBTTsyNzI2"/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0yMDsxMTowODoyMiBBTTsxOzI4Mjk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="kode, kelas, jumTiket" type="Integer" array="False" size=""/>
+            <declare name="namaPesawat, tujTiket" type="String" array="False" size=""/>
+            <declare name="hargaTiket" type="Real" array="False" size=""/>
+            <output expression="&quot;Nama Pesawat:&quot;" newline="True"/>
+            <input variable="namaPesawat"/>
+            <output expression="&quot;Tiket Tujuan:&quot;" newline="True"/>
+            <input variable="tujTiket"/>
+            <output expression="&quot;Jumlah Tiket:&quot;" newline="True"/>
+            <input variable="jumTiket"/>
+            <output expression="&quot;Masukkan Harga Tiket:&quot;" newline="True"/>
+            <input variable="hargaTiket"/>
+            <if expression="">
+                <then/>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

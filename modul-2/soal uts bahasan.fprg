@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal uts bahasan"/>
+        <attribute name="authors" value="Acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-20 10:09:22 AM"/>
+        <attribute name="created" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0yMDsxMDowMTo0MyBBTTsyNzE2"/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0yMDsxMDowOToyMiBBTTsxOzI4Mjk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j, n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <for variable="i" start="i" end="n" direction="inc" step="1">
+                <for variable="j" start="i" end="n" direction="inc" step="1">
+                    <if expression="i &gt;= j">
+                        <then>
+                            <output expression="j" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
