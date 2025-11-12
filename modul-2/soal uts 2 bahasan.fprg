@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal uts 2 bahasan"/>
+        <attribute name="authors" value="Acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-20 10:53:09 AM"/>
+        <attribute name="created" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0yMDsxMDoyNToyOSBBTTsyNzI2"/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0yMDsxMDo1MzowOSBBTTsxOzI4MzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama, jk, status" type="String" array="False" size=""/>
+            <declare name="gaji, tunAnak, tunKel, totGaji" type="Real" array="False" size=""/>
+            <declare name="anak" type="Integer" array="False" size=""/>
+            <output expression="&quot;masukkan nama:&quot;" newline="True"/>
+            <input variable="nama"/>
+            <output expression="&quot;jenis kelamin:&quot;" newline="True"/>
+            <input variable="jk"/>
+            <output expression="&quot;staus menikah:&quot;" newline="True"/>
+            <input variable="status"/>
+            <if expression="status == &quot;Y&quot;">
+                <then>
+                    <output expression="&quot;jumlah anak&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="totGaji" expression="gaji"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

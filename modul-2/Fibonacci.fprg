@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Fibonacci"/>
+        <attribute name="authors" value="Acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-03 01:33:03 AM"/>
+        <attribute name="created" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMS0wMzswMToyMTo1OSBBTTsyNzI3"/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMS0wMzswMTozMzowMyBBTTsxOzI4Mjc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c, n, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;masukkan fibonacci:&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="a" expression="0"/>
+            <assign variable="b" expression="1"/>
+            <assign variable="i" expression="0"/>
+            <output expression="a" newline="True"/>
+            <output expression="b" newline="True"/>
+            <for variable="i" start="2" end="n" direction="inc" step="1">
+                <assign variable="c" expression="a + b"/>
+                <output expression="c" newline="True"/>
+                <assign variable="a" expression="b"/>
+                <assign variable="b" expression="c"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
