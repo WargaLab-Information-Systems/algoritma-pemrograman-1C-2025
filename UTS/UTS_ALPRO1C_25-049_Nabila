@@ -1,0 +1,9 @@
+# rental motor  aconk dengan kriteria 
+motor_sport = 75000
+motor_matic = 50000 
+motor_trail = 100000
+asumsi_sewe = 15000  # jika sewa lebih dari 3 hari penyewaan (berlaku kelipatan)
+diskon = 10% # jika subtotal lebih dari 150.000 
+# ada diskon 10% jika jika subtotal lebih dari Rp 150000(tidak berlaku kelipatan)
+# diskon tambahan 5% jika memasukan kupon "AconkGG"(casesensitive) 
+if motor_matic :75.000 , motor_trail : 100000 motor_matic : 50.000 

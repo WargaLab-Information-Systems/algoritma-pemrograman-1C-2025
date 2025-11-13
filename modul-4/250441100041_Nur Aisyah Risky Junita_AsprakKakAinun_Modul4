@@ -1,0 +1,113 @@
+#soal nomor 1
+# Program untuk menampilkan kondisi lampu di taman kota
+
+# Meminta jumlah baris lampu
+jumlah_baris = int(input("Masukkan jumlah baris lampu: "))
+            
+# Perulangan untuk setiap baris lampu
+for baris in range(1, jumlah_baris + 1):
+    jumlah_lampu = int(input(f"Masukkan jumlah lampu pada baris ke-{baris}: "))
+    
+    # Perulangan untuk setiap lampu di baris tersebut
+    for lampu in range(1, jumlah_lampu + 1):
+        if lampu % 3 == 0:
+            print(f"Lampu ke-{lampu} pada baris {baris} rusak.")
+        else:
+            print(f"Lampu ke-{lampu} pada baris {baris} menyala.")
+
+    # Jika baris terakhir, tambahkan pesan tambahan
+    if baris == jumlah_baris:
+        print("Periksa sambungan daya utama.")
+
+#soal nomor 2
+# Program menghitung total gaji mingguan Pak Wowo
+
+total_gaji = 0
+total_lembur = 0
+total_bonus = 0
+
+# Gaji pokok per hari
+gaji_pokok = 100000
+
+print("=== Program Hitung Gaji Mingguan Pak Wowo ===")
+
+# Perulangan selama 7 hari
+for hari in range(1, 8):
+    print(f"\nHari ke-{hari}")
+    
+    # Input jumlah jam lembur dengan validasi
+    while True:
+        try:
+            lembur = int(input("Masukkan jumlah jam lembur: ")) 
+            if lembur < 0:
+                print("Jam lembur tidak boleh negatif!")
+                continue
+            break
+        except ValueError:
+            print("Input tidak valid! Harap masukkan angka.")
+    
+    # Hitung gaji lembur berdasarkan ketentuan
+    if lembur == 0:
+        tambahan_lembur = 0
+    elif 1 <= lembur <= 3:
+        tambahan_lembur = lembur * 25000
+    elif lembur == 4:
+        tambahan_lembur = 100000
+    elif lembur == 5:
+        tambahan_lembur = 125000
+    elif lembur == 6:
+        tambahan_lembur = 200000
+    elif lembur == 7:
+        tambahan_lembur = 225000
+    elif lembur == 8:
+        tambahan_lembur = 300000
+    else:
+        print("Lembur melebihi batas, tidak dihitung.")
+        tambahan_lembur = 300000
+    
+    # Input shift malam (dengan validasi)
+    while True:
+        shift = input("Apakah shift malam? (y/n): ")
+        if shift in ['y', 'n']:
+            break
+        else:
+            print("Input tidak valid! Harap masukkan 'y' atau 'n'.")
+    
+    # Tambahkan bonus shift malam jika ada
+    bonus = 50000 if shift == 'y' else 0
+    
+    # Hitung total harian dan akumulasi
+    total_harian = gaji_pokok + tambahan_lembur + bonus
+    total_gaji += total_harian
+    total_lembur += lembur
+    total_bonus += bonus
+
+# Tampilkan hasil akhir
+print("\n=== Rekap Gaji Mingguan Pak Wowo ===")
+print(f"Total jam lembur        : {total_lembur} jam")
+print(f"Total bonus shift malam : Rp{total_bonus:,}")
+print(f"Total gaji seminggu     : Rp{total_gaji:,}")
+
+#soal nomor 3
+# Program membuat dua piramida angka saling berhadapan seperti cermin
+
+# Input jumlah baris
+n = int(input("Masukkan jumlah baris: "))
+
+print("\n=== Pola Piramida Cermin ===\n")
+
+# Perulangan luar untuk baris
+for i in range(1, n + 1): #mengatur jumlah baris
+    # Piramida kiri (angka naik dari kiri ke kanan)
+    for j in range(1, i + 1):
+        print(j, end=" ")
+
+    # Spasi di tengah (berkurang tiap baris)
+    for k in range(2 * (n - i)):
+        print(" ", end=" ")
+
+    # Piramida kanan (angka turun)
+    for j in range(i, 0, -1):
+        print(j, end=" ")
+
+    print()  # Pindah ke baris berikutnya
