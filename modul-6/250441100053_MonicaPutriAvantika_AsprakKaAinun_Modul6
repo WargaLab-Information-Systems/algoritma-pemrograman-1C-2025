@@ -1,0 +1,226 @@
+#TUGAS 1
+# Program Sistem Kunjungan Santri
+
+data_kunjungan = []  # List utama untuk menyimpan seluruh data
+id_antrian = 1        # ID otomatis
+
+# menambahkan data kunjungan
+def tambah_data():
+    global id_antrian
+    print("\n--- Tambah Data Kunjungan ---")
+    nama_pengunjung = input("Nama pengunjung: ")
+    nama_santri = input("Nama santri yang dijenguk: ")
+    daerah_asal = input("Daerah asal (Sumatra/Kalimantan/Jawa): ").capitalize()
+
+    # Validasi input daerah
+    if daerah_asal not in ["Sumatra", "Kalimantan", "Jawa"]:
+        print("Daerah asal tidak valid! Harus Sumatra, Kalimantan, atau Jawa.")
+        return
+
+    # Tambahkan ke list utama
+    data_kunjungan.append([id_antrian, nama_pengunjung, nama_santri, daerah_asal])
+    print(f"Data berhasil ditambahkan dengan ID Antrian: {id_antrian}")
+    id_antrian += 1
+
+# untuk menampilkan daftar kunjungan berdasarkan daerah
+def tampilkan_data():
+    if not data_kunjungan:
+        print("\nBelum ada data kunjungan.")
+        return
+
+    print("\n=== Daftar Kunjungan Berdasarkan Daerah ===")
+    urutan_daerah = ["Sumatra", "Kalimantan", "Jawa"]
+    for daerah in urutan_daerah:
+        print(f"\n--- Pengunjung dari {daerah} ---")
+        ada_data = False
+        for data in data_kunjungan:
+            if data[3] == daerah:
+                print(f"ID: {data[0]} | Pengunjung: {data[1]} | Santri: {data[2]} | Asal: {data[3]}")
+                ada_data = True
+        if not ada_data:
+            print("Tidak ada pengunjung dari daerah ini.")
+
+# untuk menghapus data berdasarkan ID
+def hapus_data():
+    if not data_kunjungan:
+        print("\nTidak ada data yang dapat dihapus.")
+        return
+
+    try:
+        hapus_id = int(input("Masukkan ID Antrian yang akan dihapus: "))
+        for data in data_kunjungan:
+            if data[0] == hapus_id:
+                data_kunjungan.remove(data)
+                print(f"Data dengan ID {hapus_id} berhasil dihapus.")
+                return
+        print("ID Antrian tidak ditemukan.")
+    except ValueError:
+        print("Input ID harus berupa angka.")
+
+# program utama untuk menjalankan menu
+def main():
+    while True:
+        print("\n=== SISTEM KUNJUNGAN SANTRI ===")
+        print("1. Tambah Data Kunjungan")
+        print("2. Tampilkan Daftar Kunjungan")
+        print("3. Hapus Data Kunjungan")
+        print("4. Keluar")
+
+        pilihan = input("Pilih menu (1-4): ")
+
+        if pilihan == "1":
+            tambah_data()
+        elif pilihan == "2":
+            tampilkan_data()
+        elif pilihan == "3":
+            hapus_data()
+        elif pilihan == "4":
+            print("Terima kasih, program selesai.")
+            break
+        else:
+            print("Pilihan tidak valid! Silakan pilih menu 1-4.")
+
+
+main()
+
+#TUGAS 2
+#Program: Gabungkan dua tuple tanpa duplikat, lalu urutkan menurun 
+
+# Input tuple pertama
+t1 = ()
+jumlah1 = int(input("Masukkan jumlah elemen untuk tuple 1: "))
+for i in range(jumlah1):
+    angka = int(input(f"Elemen ke-{i+1} tuple 1: "))
+    t1 = t1 + (angka,)
+
+# Input tuple kedua
+t2 = ()
+jumlah2 = int(input("\nMasukkan jumlah elemen untuk tuple 2: "))
+for i in range(jumlah2):
+    angka = int(input(f"Elemen ke-{i+1} tuple 2: "))
+    t2 = t2 + (angka,)
+
+# 1. Gabungkan kedua tuple
+gabung = t1 + t2
+
+# 2. Hapus duplikat tanpa mengubah urutan
+tanpa_duplikat = []
+for angka in gabung:
+    ada = False
+    for a in tanpa_duplikat:
+        if angka == a:
+            ada = True
+            break
+    if not ada:
+        tanpa_duplikat.append(angka)
+
+# 3. Urutkan menurun dengan bubble sort manual
+n = len(tanpa_duplikat)
+for i in range(n - 1):
+    for j in range(n - i - 1):
+        if tanpa_duplikat[j] < tanpa_duplikat[j + 1]:
+            temp = tanpa_duplikat[j]
+            tanpa_duplikat[j] = tanpa_duplikat[j + 1]
+            tanpa_duplikat[j + 1] = temp
+
+# 4. Ubah ke tuple kembali
+hasil = ()
+for angka in tanpa_duplikat:
+    hasil += (angka,)
+
+# 5. Tampilkan hasil akhir
+print("\nTuple 1 :", t1)
+print("Tuple 2 :", t2)
+print("Hasil akhir (tanpa duplikat, urut menurun) :", hasil)
+
+#TUGAS 3
+# Program CRUD Deretan Angka Dominic Szoboszlai
+# Mengecek apakah daftar angka dapat dibagi menjadi dua bagian
+
+def cek_pembagian_sama(data):
+    if len(data) < 2:
+        return False
+
+    total = 0
+    for angka in data:
+        total += angka
+
+    kiri = 0 
+    # Coba setiap titik pemisah
+    for i in range(len(data) - 1):
+        kiri += data[i]
+        kanan = total - kiri
+        if kiri == kanan:
+            return True
+    return False
+
+
+def tampilkan_data(data):
+    if not data:
+        print("Data kosong.")
+    else:
+        print("Daftar angka:", data)
+
+
+def menu():
+    data = []
+    while True:
+        print("\n=== PROGRAM CRUD PEMBAGIAN DUA BAGIAN SAMA BESAR ===")
+        print("1. Tambah angka")
+        print("2. Tampilkan angka")
+        print("3. Ubah angka")
+        print("4. Hapus angka")
+        print("5. Cek pembagian dua bagian sama besar")
+        print("6. Keluar")
+
+        pilih = input("Pilih menu (1-6): ")
+
+        if pilih == "1":
+            try:
+                angka = int(input("Masukkan angka baru: "))
+                data.append(angka)
+                print("Angka berhasil ditambahkan.")
+            except ValueError:
+                print("Masukkan harus berupa angka!")
+        elif pilih == "2":
+            tampilkan_data(data)
+        elif pilih == "3":
+            tampilkan_data(data)
+            if not data:
+                continue
+            try:
+                idx = int(input("Masukkan indeks yang ingin diubah (mulai dari 0): "))
+                if 0 <= idx < len(data):
+                    angka_baru = int(input("Masukkan angka baru: "))
+                    data[idx] = angka_baru
+                    print("Data berhasil diubah.")
+                else:
+                    print("Indeks tidak valid.")
+            except ValueError:
+                print("Masukkan tidak valid.")
+        elif pilih == "4":
+            tampilkan_data(data)
+            if not data:
+                continue
+            try:
+                idx = int(input("Masukkan indeks yang ingin dihapus (mulai dari 0): "))
+                if 0 <= idx < len(data):
+                    del data[idx]
+                    print("Data berhasil dihapus.")
+                else:
+                    print("Indeks tidak valid.")
+            except ValueError:
+                print("Masukkan tidak valid.")
+        elif pilih == "5":
+            if not data:
+                print("Data masih kosong!")
+            else:
+                hasil = cek_pembagian_sama(data)
+                print("Hasil:", hasil)
+        elif pilih == "6":
+            print("Program selesai. Terima kasih!")
+            break
+        else:
+            print("Pilihan tidak valid.")
+
+menu()
