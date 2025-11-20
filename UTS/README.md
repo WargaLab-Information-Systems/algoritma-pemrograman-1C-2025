@@ -1,17 +1,3 @@
-main
-main
-jadi program ini dibuat melakukan perentalan motor yang harga nya sudah di sesuaikan, jika nyewa lebih dari 3 hari dia dapet asuransi 15000 dan
-
-250441100037_Muhamad_Fiki_Arya_Kusuma
-jadi program ini dibuat melakukan perentalan motor yang harga nya sudah di sesuaikan, jika nyewa lebih dari 3 hari dia dapet asuransi 15000 dan total semua
-main
-pertama menetapkan harga sewa motor, asuransi, diskon, dan kupon. 
-lalu menambah variabel penghitung hari dan total.
-Setelah itu bikin perulangan tanpa batas dengan menggunakan while True: bukan while saja
-dibawahnya meminta input untuk jenis motor, sewa motor, dan apakah mempunyai kupon.
-buat if jika sewa lebih dari 3 hari ada tambahan asuransi
- main
-sekian sampai situ saja programnya
-main
-sekian sampai situ saja programnya main
- main
+Pada program di atas, saya membuat bagian awal dari program rental motor yang bertujuan untuk menampilkan daftar jenis motor yang dapat disewa dan menentukan harga sewanya. Program ini menggunakan beberapa perintah print() untuk menampilkan menu pilihan motor, yaitu motor matic, motor trail, dan motor sport. Kemudian, saya membuat tiga variabel yaitu motor_matic, motor_trail, dan motor_sport yang masing-masing berisi harga sewa per hari. Selain itu, saya juga menambahkan variabel ansuransi, diskon, dan diskon_tambahan untuk menampung nilai biaya tambahan dan potongan harga yang nantinya akan digunakan dalam perhitungan total biaya sewa.
+Pada program di atas, saya membuat bagian awal dari program rental motor yang bertujuan untuk menampilkan daftar jenis motor yang dapat disewa dan menentukan harga sewanya. Program ini menggunakan beberapa perintah print() untuk menampilkan menu pilihan motor, yaitu motor matic, motor trail, dan motor sport. Kemudian, saya membuat tiga variabel yaitu motor_matic, motor_trail, dan motor_sport yang masing-masing berisi harga sewa per hari. Selain itu, saya juga menambahkan variabel ansuransi, diskon, dan diskon_tambahan untuk menampung nilai biaya tambahan dan potongan harga yang nantinya akan digunakan dalam perhitungan total biaya sewa.
+Secara keseluruhan, kode ini baru sebatas menyiapkan tampilan awal dan nilai-nilai dasar untuk program rental motor, tetapi belum memenuhi seluruh ketentuan soal karena masih belum bisa memproses input pengguna, menghitung biaya sewa secara otomatis, maupun menampilkan hasil akhir. Dengan demikian, program perlu diperbaiki dan dilengkapi agar dapat berjalan sesuai fungsi yang diharapkan.

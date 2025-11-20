@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Faktorial"/>
+        <attribute name="authors" value="Acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-03 01:17:25 AM"/>
+        <attribute name="created" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMS0wMzsxMjo0Mjo1NiBBTTsyNzI5"/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMS0wMzswMToxNzoyNSBBTTsxOzI4MzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i, hasil" type="Integer" array="False" size=""/>
+            <output expression="&quot;masukkah angka faktorial:&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n &lt; 0">
+                <then>
+                    <output expression="&quot;ERROR&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="hasil" expression="1"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i &lt;= n">
+                <assign variable="hasil" expression="hasil * i"/>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <output expression="&quot;hasil faktorial adalah &quot;" newline="True"/>
+            <output expression="hasil" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
