@@ -1,0 +1,56 @@
+contacts = {}
+
+while True:
+    print("\n=== CONTACT BOOK ===")
+    print("1. Tampilkan Semua Kontak")
+    print("2. Cari Kontak")
+    print("3. Tambah Kontak")
+    print("4. Perbarui Email Kontak")
+    print("5. Hapus Kontak")
+    print("6. Keluar")
+
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        if not contacts:
+            print("Belum ada kontak.")
+        else:
+            for nama, data in contacts.items():
+                print(f"{nama}: Telp={data[0]}, Email={data[1]}")
+
+    elif pilihan == "2":
+        nama = input("Masukkan nama kontak: ")
+        if nama in contacts:
+            print(f"{nama}: Telp={contacts[nama][0]}, Email={contacts[nama][1]}")
+        else:
+            print("Kontak tidak ditemukan.")
+
+    elif pilihan == "3":
+        nama = input("Nama: ")
+        telp = input("No Telp: ")
+        email = input("Email: ")
+        contacts[nama] = [telp, email]
+        print("Kontak berhasil ditambahkan!")
+
+    elif pilihan == "4":
+        nama = input("Masukkan nama kontak: ")
+        if nama in contacts:
+            email_baru = input("Email baru: ")
+            contacts[nama][1] = email_baru
+            print("Email berhasil diperbarui!")
+        else:
+            print("Kontak tidak ditemukan.")
+
+    elif pilihan == "5":
+        nama = input("Nama kontak yang akan dihapus: ")
+        if nama in contacts:
+            del contacts[nama]
+            print("Kontak berhasil dihapus!")
+        else:
+            print("Kontak tidak ditemukan.")
+
+    elif pilihan == "6":
+        break
+
+    else:
+        print("Menu tidak valid.")

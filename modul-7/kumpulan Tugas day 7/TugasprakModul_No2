@@ -1,0 +1,61 @@
+inventaris = {}
+
+while True:
+    print("\n=== INVENTARIS GUDANG ===")
+    print("1. Tampilkan Semua Barang")
+    print("2. Cari Barang")
+    print("3. Tambah Barang")
+    print("4. Perbarui Stok Barang")
+    print("5. Hapus Barang")
+    print("6. Keluar")
+
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        if not inventaris:
+            print("Belum ada data barang.")
+        else:
+            for ID, data in inventaris.items():
+                print(f"ID={ID}, Nama={data[0]}, Harga={data[1]}, Stok={data[2]}")
+
+    elif pilihan == "2":
+        ID = input("Masukkan ID barang: ")
+        if ID in inventaris:
+            nama, harga, stok = inventaris[ID]
+            print(f"Nama={nama}, Harga={harga}, Stok={stok}")
+        else:
+            print("Barang tidak ditemukan.")
+
+    elif pilihan == "3":
+        ID = input("ID Barang: ")
+        nama = input("Nama Barang: ")
+        harga = int(input("Harga: "))
+        stok = int(input("Stok: "))
+        inventaris[ID] = [nama, harga, stok]
+        print("Barang berhasil ditambahkan!")
+
+    elif pilihan == "4":
+        ID = input("Masukkan ID barang: ")
+        if ID in inventaris:
+            tambah = int(input("Jumlah perubahan stok (+/-): "))
+            if inventaris[ID][2] + tambah < 0:
+                print("Stok tidak boleh negatif!")
+            else:
+                inventaris[ID][2] += tambah
+                print("Stok berhasil diperbarui!")
+        else:
+            print("Barang tidak ditemukan.")
+
+    elif pilihan == "5":
+        ID = input("ID barang yang akan dihapus: ")
+        if ID in inventaris:
+            del inventaris[ID]
+            print("Barang berhasil dihapus!")
+        else:
+            print("Barang tidak ditemukan.")
+
+    elif pilihan == "6":
+        break
+
+    else:
+        print("Menu tidak valid.")
