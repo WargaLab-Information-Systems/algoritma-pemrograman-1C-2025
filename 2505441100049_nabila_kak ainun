@@ -1,0 +1,284 @@
+# no 1
+contacts = {}
+
+def show_all():
+    if not contacts:
+        print("Belum ada kontak.")
+    else:
+        print("\n=== DAFTAR KONTAK ===")
+        for name, data in contacts.items():
+            print(f"Nama: {name}, Telepon: {data[0]}, Email: {data[1]}")
+    print()
+
+def search_contact():
+    name = input("Masukkan nama yang dicari: ")
+    if name in contacts:
+        print("\n=== DATA KONTAK ===")
+        print(f"Nama: {name}")
+        print(f"Telepon: {contacts[name][0]}")
+        print(f"Email: {contacts[name][1]}\n")
+    else:
+        print("Kontak tidak ditemukan!")
+
+def add_contact():
+    name = input("Nama: ")
+    phone = input("Nomor Telepon: ")
+    email = input("Email: ")
+    contacts[name] = [phone, email]
+    print("Kontak berhasil ditambahkan!")
+
+def update_contact():
+    name = input("Masukkan nama kontak yang ingin diperbarui: ")
+
+    if name not in contacts:
+        print("Kontak tidak ditemukan!")
+        return
+
+    print("\n=== Pilih data yang ingin diperbarui ===")
+    print("1. Update Nama")
+    print("2. Update Nomor Telepon")
+    print("3. Update Email")
+    print("4. Update Semua")
+
+    pilih = input("Pilih (1-4): ")
+
+    # Simpan data lama
+    phone = contacts[name][0]
+    email = contacts[name][1]
+
+    if pilih == "1":
+        new_name = input("Nama baru: ")
+        contacts[new_name] = [phone, email]
+        del contacts[name]
+        print("Nama berhasil diperbarui!")
+
+    elif pilih == "2":
+        new_phone = input("Nomor telepon baru: ")
+        contacts[name][0] = new_phone
+        print("Nomor telepon berhasil diperbarui!")
+
+    elif pilih == "3":
+        new_email = input("Email baru: ")
+        contacts[name][1] = new_email
+        print("Email berhasil diperbarui!")
+
+    elif pilih == "4":
+        new_name = input("Nama baru: ")
+        new_phone = input("Nomor telepon baru: ")
+        new_email = input("Email baru: ")
+
+        contacts[new_name] = [new_phone, new_email]
+        if new_name != name:
+            del contacts[name]
+        print("Semua data kontak berhasil diperbarui!")
+
+    else:
+        print("Pilihan tidak valid!")
+        return
+
+def delete_contact():
+    name = input("Masukkan nama kontak yang ingin dihapus: ")
+    if name in contacts:
+        del contacts[name]
+        print("Kontak berhasil dihapus!")
+    else:
+        print("Kontak tidak ditemukan!")
+
+while True:
+    print("\n=== CONTACT BOOK ===")
+    print("1. Tampilkan semua kontak")
+    print("2. Cari kontak")
+    print("3. Tambah kontak")
+    print("4. Update kontak")
+    print("5. Hapus kontak")
+    print("6. Keluar")
+    
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        show_all()
+    elif pilih == "2":
+        search_contact()
+    elif pilih == "3":
+        add_contact()
+    elif pilih == "4":
+        update_contact()
+    elif pilih == "5":
+        delete_contact()
+    elif pilih == "6":
+        break
+    else:
+        print("Pilihan tidak valid!")
+
+
+no 2
+# Program Manajemen Inventaris Gudang (CRUD)
+
+inventaris = {}   # format: {id_barang: [nama, harga, stok]}
+
+def tampilkan_semua():
+    if not inventaris:
+        print("Inventaris masih kosong.\n")
+    else:
+        print("\n=== Daftar Inventaris ===")
+        for idb, data in inventaris.items():
+            print(f"ID: {idb} | Nama: {data[0]} | Harga: {data[1]} | Stok: {data[2]}")
+        print()
+
+def cari_barang():
+    idb = input("Masukkan ID barang yang dicari: ")
+    if idb in inventaris:
+        nama, harga, stok = inventaris[idb]
+        print(f"Data ditemukan: Nama={nama}, Harga={harga}, Stok={stok}\n")
+    else:
+        print("Barang dengan ID tersebut tidak ditemukan.\n")
+
+def tambah_barang():
+    idb = input("Masukkan ID barang baru: ")
+    if idb in inventaris:
+        print("ID sudah digunakan. Gagal menambah barang.\n")
+        return
+    
+    nama = input("Masukkan nama barang: ")
+    harga = int(input("Masukkan harga barang: "))
+    stok = int(input("Masukkan stok barang: "))
+    
+    inventaris[idb] = [nama, harga, stok]
+    print("Barang berhasil ditambahkan!\n")
+
+def update_barang():
+    idb = input("Masukkan ID barang yang akan diperbarui: ")
+    
+    if idb not in inventaris:
+        print("Barang tidak ditemukan.\n")
+        return
+
+    print("\n=== Pilih Data yang Akan Diperbarui ===")
+    print("1. Update Nama")
+    print("2. Update Harga")
+    print("3. Update Stok")
+    
+    pilihan = input("Masukkan pilihan (1-3): ")
+
+    if pilihan == "1":
+        nama_baru = input("Masukkan nama baru: ")
+        inventaris[idb][0] = nama_baru
+        print("Nama berhasil diperbarui!\n")
+
+    elif pilihan == "2":
+        harga_baru = int(input("Masukkan harga baru: "))
+        inventaris[idb][1] = harga_baru
+        print("Harga berhasil diperbarui!\n")
+
+    elif pilihan == "3":
+        perubahan = int(input("Masukkan perubahan stok (boleh negatif): "))
+        stok_baru = inventaris[idb][2] + perubahan
+        
+        if stok_baru < 0:
+            print("Stok tidak boleh negatif! Perubahan dibatalkan.\n")
+        else:
+            inventaris[idb][2] = stok_baru
+            print("Stok berhasil diperbarui!\n")
+    else:
+        print("Pilihan tidak valid!\n")
+
+def hapus_barang():
+    idb = input("Masukkan ID barang yang akan dihapus: ")
+    if idb in inventaris:
+        del inventaris[idb]
+        print("Barang berhasil dihapus.\n")
+    else:
+        print("Barang tidak ditemukan.\n")
+
+# Menu utama
+while True:
+    print("=== Menu Inventaris Gudang ===")
+    print("1. Tampilkan Semua Barang")
+    print("2. Cari Barang berdasarkan ID")
+    print("3. Tambah Barang Baru")
+    print("4. Perbarui Barang (Nama/Harga/Stok)")
+    print("5. Hapus Barang")
+    print("6. Keluar")
+    
+    pilih = input("Pilih menu (1-6): ")
+    
+    if pilih == "1":
+        tampilkan_semua()
+    elif pilih == "2":
+        cari_barang()
+    elif pilih == "3":
+        tambah_barang()
+    elif pilih == "4":
+        update_barang()
+    elif pilih == "5":
+        hapus_barang()
+    elif pilih == "6":
+        print("Program selesai. Terima kasih!")
+        break
+    else:
+        print("Pilihan tidak valid!\n")
+
+
+no 3
+coupons = {
+    "PROMO10": 10,
+    "HEMAT20": 20,
+    "DISKON5": 5
+}
+
+def show_coupons():
+    if not coupons:
+        print("Tidak ada kupon tersisa.")
+    else:
+        print("\n=== Daftar Kupon ===")
+        for kode, diskon in coupons.items():
+            print(f"Kode: {kode}, Diskon: {diskon}%")
+
+def process_transaction():
+    try:
+        total = float(input("Total belanja: "))
+    except ValueError:
+        print("Input total belanja harus angka!")
+        return
+
+    kode = input("Masukkan kode kupon: ").upper()
+
+    if kode in coupons:
+        # Kupon valid dan terdaftar
+        diskon = coupons[kode]
+        potongan = total * (diskon / 100)
+        bayar = total - potongan
+
+        print(f"\nKupon ditemukan! Diskon {diskon}%")
+        print(f"Potongan: {potongan}")
+        print(f"Total bayar: {bayar}")
+
+        del coupons[kode]  # kupon dihapus setelah digunakan
+        print("Kupon dihapus karena sudah digunakan.\n")
+    else:
+        # Kupon dianggap valid tapi tidak memberi diskon
+        diskon = 0
+        potongan = 0
+        bayar = total
+
+        print("\nKupon tetap valid! (meskipun tidak terdaftar)")
+        print("Diskon: 0% (tidak ada potongan)")
+        print(f"Total bayar: {bayar}\n")
+
+while True:
+    print("\n=== SISTEM KUPON DISKON ===")
+    print("1. Tampilkan kupon")
+    print("2. Proses transaksi")
+    print("3. Keluar")
+    
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        show_coupons()
+    elif pilih == "2":
+        process_transaction()
+    elif pilih == "3":
+        print("Program selesai. Terima kasih!")
+        break
+    else:
+        print("Pilihan tidak valid!")
