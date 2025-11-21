@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="MAHASOALPRAKTIKUM"/>
+        <attribute name="authors" value="Acer"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-07 09:42:50 PM"/>
+        <attribute name="created" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0wNzsxMjo0MDowNCBBTTsyNzIz"/>
+        <attribute name="edited" value="QWNlcjtMQVBUT1AtU01FQTJFVVA7MjAyNS0xMC0wNzswOTo0Mjo1MCBQTTs2OzI4NjA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nilai" type="Integer" array="False" size=""/>
+            <declare name="kehadiran" type="Integer" array="False" size=""/>
+            <declare name="huruf" type="String" array="False" size=""/>
+            <declare name="status" type="String" array="False" size=""/>
+            <output expression="&quot;Masukkan nilai ujian (0-100): &quot;" newline="True"/>
+            <input variable="nilai"/>
+            <if expression="nilai &lt; 0 OR nilai &gt; 200">
+                <then>
+                    <output expression="&quot;tidak sesuai&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;masukkan persentase kehadiran (0-100)&quot;" newline="True"/>
+                </else>
+            </if>
+            <input variable="kehadiran"/>
+            <if expression="nilai &gt;= 85 and nilai &lt;= 100">
+                <then>
+                    <assign variable="huruf" expression="&quot;A&quot;"/>
+                </then>
+                <else>
+                    <if expression="nilai &gt;= 70 and nilai &lt;= 84">
+                        <then>
+                            <assign variable="huruf" expression="&quot;B&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="nilai &gt;=60 and nilai &lt;= 69">
+                                <then>
+                                    <assign variable="huruf" expression="&quot;C&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="nilai &lt;= 50">
+                                        <then>
+                                            <assign variable="huruf" expression="&quot;D&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="huruf" expression="&quot;E&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="nilai &gt;= 85 and kehadiran &gt;= 90">
+                <then>
+                    <assign variable="status" expression="&quot;lulus dengan pujian&quot;"/>
+                </then>
+                <else>
+                    <if expression="nilai &gt;= 60">
+                        <then>
+                            <assign variable="status" expression="&quot;lulus&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="status" expression="&quot;tidak lulus&quot;"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;nilai ujian: &quot; &amp; nilai" newline="True"/>
+            <output expression="&quot;kehadiran: &quot; &amp; kehadiran &amp; &quot;%&quot;" newline="True"/>
+            <output expression="&quot;nilai huruf: &quot; &amp; huruf" newline="True"/>
+            <output expression="&quot;status kelulusan: &quot; &amp; status" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
