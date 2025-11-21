@@ -1,103 +1,85 @@
-inventaris = {}
+kupon = {
+    "promo10": 10,
+    "diskon20": 20,
+    "promo5": 5,
+    "bigsale": 40,
+    "weekend": 30
+}
 
-def tampilkan_barang():
-    if not inventaris:
-        print("Belum ada data barang.\n")
-        return
-    
-    print("\n--- Daftar Inventaris ---")
-    for idb, data in inventaris.items():
-        print(f"ID Barang : {idb}")
-        print(f"Nama      : {data[0]}")
-        print(f"Harga     : {data[1]}")
-        print(f"Stok      : {data[2]}\n")
-
-def cari_barang():
-    idb = input("Masukkan ID Barang: ").lower()
-    if idb in inventaris:
-        print("\nData ditemukan:")
-        print(f"ID    : {idb}")
-        print(f"Nama  : {inventaris[idb][0]}")
-        print(f"Harga : {inventaris[idb][1]}")
-        print(f"Stok  : {inventaris[idb][2]}\n")
+def tampilkan_kupon():
+    if not kupon:
+        print("\nTidak ada kupon tersedia.\n")
     else:
-        print("Barang tidak ditemukan.\n")
+        print("\n--- Daftar Kupon Tersedia ---")
+        for kode, diskon in kupon.items():
+            print(f"Kode: {kode}  |  Diskon: {diskon}%")
+        print()
 
-def tambah_barang():
-    idb = input("Masukkan ID Barang: ").lower()
-
-    if idb in inventaris:
-        print("ID Barang sudah ada! Gunakan ID lain.\n")
-        return
-
-    nama = input("Masukkan nama barang: ")
+def proses_transaksi():
+    nama = input("\nMasukkan nama pembeli: ")
 
     try:
-        harga = int(input("Masukkan harga barang: "))
-        stok = int(input("Masukkan stok awal: "))
-    except:
-        print("Input harga/stok harus berupa angka!\n")
+        total = float(input("Masukkan total belanja: Rp "))
+    except ValueError:
+        print("Input tidak valid! Masukkan angka.\n")
         return
 
-    inventaris[idb] = [nama, harga, stok]
-    print("Barang berhasil ditambahkan!\n")
+    kode = input("Masukkan kode kupon (Opsional): ").lower()
 
-def update_stok():
-    idb = input("Masukkan ID Barang yang akan diperbarui stoknya: ").lower()
+    diskon = 0
+    potongan = 0
 
-    if idb not in inventaris:
-        print("Barang tidak ditemukan.\n")
-        return
+    if kode == "":
+        print("\nPembeli tidak menggunakan kupon.\n")
+
+    elif kode not in kupon:
+        print("\nKupon tidak valid atau sudah digunakan!\n")
+
+    else:
+        diskon = kupon[kode]
+        potongan = total * (diskon / 100)
+        del kupon[kode]
+        print(f"\nKupon '{kode}' berhasil digunakan.\n")
+
+    total_bayar = total - potongan
 
     try:
-        perubahan = int(input("Masukkan penambahan/pengurangan stok: "))
-    except:
-        print("Input harus berupa angka!\n")
+        bayar = float(input("Masukkan uang pembayaran: Rp "))
+    except ValueError:
+        print("Input tidak valid! Masukkan angka.\n")
         return
 
-    stok_sekarang = inventaris[idb][2]
-    stok_baru = stok_sekarang + perubahan
+    if bayar < total_bayar:
+        print("\nUang tidak cukup! Transaksi dibatalkan.\n")
+        return
 
-    if stok_baru < 0:
-        print("Stok tidak boleh negatif! Pembaruan dibatalkan.\n")
-    else:
-        inventaris[idb][2] = stok_baru
-        print("Stok berhasil diperbarui.\n")
+    kembalian = bayar - total_bayar
 
-def hapus_barang():
-    idb = input("Masukkan ID Barang yang akan dihapus: ").lower()
-
-    if idb in inventaris:
-        del inventaris[idb]
-        print("Barang berhasil dihapus.\n")
-    else:
-        print("Barang tidak ditemukan.\n")
+    print("\n===== STRUK BELANJA =====")
+    print(f"Total Belanja : Rp {total}")
+    print(f"Diskon        : {diskon}%")
+    print(f"Potongan      : Rp {potongan}")
+    print(f"Total Bayar   : Rp {total_bayar}")
+    print(f"Uang Bayar    : Rp {bayar}")
+    print(f"Kembalian     : Rp {kembalian}")
+    print("==========================\n")
 
 while True:
     print("""
-=== MENU INVENTARIS GUDANG ===
-1. Tampilkan Semua Barang
-2. Cari Barang
-3. Tambah Barang
-4. Perbarui Stok Barang
-5. Hapus Barang
-6. Keluar
+=== SISTEM VALIDASI KUPON DISKON ===
+1. Tampilkan semua kupon
+2. Proses transaksi
+3. Keluar
 """)
 
-    pilih = input("Pilih menu: ")
+    pilih = input("Pilih menu (1-3): ")
 
     if pilih == "1":
-        tampilkan_barang()
+        tampilkan_kupon()
     elif pilih == "2":
-        cari_barang()
+        proses_transaksi()
     elif pilih == "3":
-        tambah_barang()
-    elif pilih == "4":
-        update_stok()
-    elif pilih == "5":
-        hapus_barang()
-    elif pilih == "6":
-        print("Program selesai. Terima kasih!")
+        print("Program selesai.")
         break
     else:
-        print("Pilihan tidak valid.\n")
+        print("Pilihan tidak valid!\n")
