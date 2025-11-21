@@ -1,0 +1,181 @@
+# Program Sistem Kunjungan Santri
+
+kunjungan = []
+id_counter = 1
+
+def tambah_data():
+    global id_counter
+    nama_pengunjung = input("Masukkan nama pengunjung: ")
+    nama_santri = input("Masukkan nama santri yang dijenguk: ")
+    daerah = input("Masukkan daerah asal (Sumatra/Kalimantan/Jawa): ").capitalize()
+
+    data = [id_counter, nama_pengunjung, nama_santri, daerah]
+    kunjungan.append(data)
+    print(f"Data pengunjung berhasil ditambahkan dengan ID: {id_counter}")
+    id_counter += 1
+
+def tampilkan_data():
+    if not kunjungan:
+        print("Belum ada data kunjungan.")
+        return
+
+    print("\n=== DAFTAR KUNJUNGAN SANTRI ===")
+    urutan_daerah = ["Sumatra", "Kalimantan", "Jawa"]
+    for daerah in urutan_daerah:
+        print(f"\n--- Pengunjung dari {daerah} ---")
+        for data in kunjungan:
+            if data[3] == daerah:
+                print(f"ID: {data[0]}, Pengunjung: {data[1]}, Santri: {data[2]}")
+
+def hapus_data():
+    if not kunjungan:
+        print("Belum ada data kunjungan.")
+        return
+    try:
+        id_hapus = int(input("Masukkan ID pengunjung yang ingin dihapus: "))
+        for data in kunjungan:
+            if data[0] == id_hapus:
+                kunjungan.remove(data)
+                print("Data berhasil dihapus.")
+                return
+        print("ID tidak ditemukan.")
+    except ValueError:
+        print("Masukkan angka untuk ID!")
+
+# Menu utama
+while True:
+    print("\n=== MENU KUNJUNGAN SANTRI ===")
+    print("1. Tambah Data")
+    print("2. Tampilkan Data")
+    print("3. Hapus Data")
+    print("4. Keluar")
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        tambah_data()
+    elif pilih == "2":
+        tampilkan_data()
+    elif pilih == "3":
+        hapus_data()
+    elif pilih == "4":
+        break
+    else:
+        print("Pilihan tidak valid.")
+
+
+print("=== PROGRAM GABUNGAN TUPLE DOMINIC ===")
+
+data1 = input("Masukkan angka tuple pertama: ")
+data2 = input("Masukkan angka tuple kedua: ")
+
+# Mengubah input menjadi tuple angka
+def ke_tuple(teks):
+    angka = ""
+    hasil = ()
+    teks = teks + " "
+    for karakter in teks:
+        if karakter == " ":
+            if angka != "":
+                hasil = hasil + (int(angka),)
+                angka = ""
+        else:
+            angka += karakter
+    return hasil
+
+t1 = ke_tuple(data1)
+t2 = ke_tuple(data2)
+
+# Gabungkan tuple
+gabung = t1 + t2
+
+# Hapus duplikat manual
+tanpa_duplikat = []
+for angka in gabung:
+    if angka not in tanpa_duplikat:
+        tanpa_duplikat.append(angka)
+
+# Urutkan manual secara descending
+for i in range(len(tanpa_duplikat)):
+    for j in range(i + 1, len(tanpa_duplikat)):
+        if tanpa_duplikat[i] < tanpa_duplikat[j]:
+            tanpa_duplikat[i], tanpa_duplikat[j] = tanpa_duplikat[j], tanpa_duplikat[i]
+
+hasil = tuple(tanpa_duplikat)
+
+print("\nTuple pertama :", t1)
+print("Tuple kedua   :", t2)
+print("Hasil akhir   :", hasil)
+
+
+# Program CRUD dan Cek Pembagian List
+
+data = []
+
+def tambah():
+    angka = int(input("Masukkan angka: "))
+    data.append(angka)
+    print("Data berhasil ditambah.")
+
+def tampil():
+    print("Data saat ini:", data)
+
+def ubah():
+    try:
+        indeks = int(input("Masukkan indeks yang ingin diubah: "))
+        if indeks < len(data):
+            nilai_baru = int(input("Masukkan nilai baru: "))
+            data[indeks] = nilai_baru
+            print("Data berhasil diubah.")
+        else:
+            print("Indeks tidak ditemukan.")
+    except ValueError:
+        print("Masukkan angka yang valid.")
+
+def hapus():
+    try:
+        indeks = int(input("Masukkan indeks yang ingin dihapus: "))
+        if indeks < len(data):
+            data.pop(indeks)
+            print("Data berhasil dihapus.")
+        else:
+            print("Indeks tidak ditemukan.")
+    except ValueError:
+        print("Masukkan angka yang valid.")
+
+def cek_pembagian():
+    total = sum(data)
+    setengah = total / 2
+    jumlah = 0
+    for angka in data:
+        jumlah += angka
+        if jumlah == setengah:
+            print("True — Data dapat dibagi menjadi dua bagian dengan jumlah sama.")
+            return
+    print("False — Tidak dapat dibagi dengan jumlah yang sama.")
+
+# Menu utama
+while True:
+    print("\n=== MENU CRUD DOMINIC ===")
+    print("1. Tambah Angka")
+    print("2. Tampilkan Data")
+    print("3. Ubah Data")
+    print("4. Hapus Data")
+    print("5. Cek Pembagian")
+    print("6. Keluar")
+
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        tambah()
+    elif pilih == "2":
+        tampil()
+    elif pilih == "3":
+        ubah()
+    elif pilih == "4":
+        hapus()
+    elif pilih == "5":
+        cek_pembagian()
+    elif pilih == "6":
+        break
+    else:
+        print("Pilihan tidak valid.")
