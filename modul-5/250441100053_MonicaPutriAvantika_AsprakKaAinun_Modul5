@@ -1,0 +1,143 @@
+#TUGAS 1
+# Program menghitung faktorial secara rekursif
+# Kasus: Pak Tungtung ingin membuka brankas berisi private key Bitcoin
+
+def faktorial(n):
+    """Fungsi rekursif untuk menghitung faktorial dari n"""
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * faktorial(n - 1)
+
+# Program utama bersifat dinamis (input dari pengguna)
+try:
+    n = int(input("Masukkan bilangan bulat non-negatif (N): "))
+    if n < 0:
+        print("Maaf, bilangan tidak boleh negatif.")
+    else:
+        hasil = faktorial(n)
+        print(f"Hasil faktorial dari {n}! = {hasil}")
+except ValueError:
+    print("Input tidak valid! Harap masukkan bilangan bulat.")
+
+# Program untuk menentukan apakah dua kata merupakan anagram
+
+def cek_anagram(kata1, kata2):
+    """Fungsi untuk memeriksa apakah dua kata adalah anagram"""
+    # Hilangkan spasi dan ubah ke huruf kecil agar perbandingan konsisten
+    kata1 = kata1.replace(" ", "").lower()
+    kata2 = kata2.replace(" ", "").lower()
+
+    # Cek apakah panjangnya sama dan hurufnya memiliki susunan yang sama
+    return sorted(kata1) == sorted(kata2)
+
+
+# Program utama (dinamis)
+print("=== Program Pengecekan Anagram ===")
+kata1 = input("Masukkan kata pertama: ")
+kata2 = input("Masukkan kata kedua: ")
+
+# Panggil fungsi untuk memeriksa
+hasil = cek_anagram(kata1, kata2)
+
+#TUGAS 2
+
+# Tampilkan hasil
+if hasil:
+    print(f" '{kata1}' dan '{kata2}' adalah ANAGRAM.")
+else:
+    print(f" '{kata1}' dan '{kata2}' bukan anagram.")
+# Program untuk menentukan apakah dua kata merupakan anagram
+
+def cek_anagram(kata1, kata2):
+    """Fungsi untuk memeriksa apakah dua kata adalah anagram"""
+    # Hilangkan spasi dan ubah ke huruf kecil agar perbandingan konsisten
+    kata1 = kata1.replace(" ", "").lower()
+    kata2 = kata2.replace(" ", "").lower()
+
+    # Cek apakah panjangnya sama dan hurufnya memiliki susunan yang sama
+    return sorted(kata1) == sorted(kata2)
+
+
+# Program utama (dinamis)
+print("=== Program Pengecekan Anagram ===")
+kata1 = input("Masukkan kata pertama: ")
+kata2 = input("Masukkan kata kedua: ")
+
+# Panggil fungsi untuk memeriksa
+hasil = cek_anagram(kata1, kata2)
+
+# Tampilkan hasil
+if hasil:
+    print(f" '{kata1}' dan '{kata2}' adalah ANAGRAM.")
+else:
+    print(f" '{kata1}' dan '{kata2}' bukan anagram.")
+
+# Program menghitung faktorial secara rekursif
+# Kasus: Pak Tungtung ingin membuka brankas berisi private key Bitcoin
+
+def faktorial(n):
+    """Fungsi rekursif untuk menghitung faktorial dari n"""
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * faktorial(n - 1)
+
+# Program utama bersifat dinamis (input dari pengguna)
+try:
+    n = int(input("Masukkan bilangan bulat non-negatif (N): "))
+    if n < 0:
+        print("Maaf, bilangan tidak boleh negatif.")
+    else:
+        hasil = faktorial(n)
+        print(f"Hasil faktorial dari {n}! = {hasil}")
+except ValueError:
+    print("Input tidak valid! Harap masukkan bilangan bulat.")
+
+#TUGAS 3
+
+# Program menghitung gaji bersih bulanan karyawan
+
+def hitung_gaji_bersih(nama, jabatan, gaji_pokok):
+    """Fungsi untuk menghitung gaji bersih setelah pajak dan tunjangan"""
+    # Pajak tetap sebesar 5%
+    pajak = 0.05 * gaji_pokok
+
+    # Tunjangan berdasarkan jabatan
+    if jabatan == "manager":
+        tunjangan = 0.10 * gaji_pokok
+    elif jabatan == "staff":
+        tunjangan = 0.05 * gaji_pokok
+    else:
+        tunjangan = 0  # Jika jabatan selain Manager atau Staff
+
+    # Hitung gaji bersih
+    gaji_bersih = gaji_pokok - pajak + tunjangan
+
+    # Tampilkan hasil perhitungan secara lengkap
+    print("\n=== RINCIAN GAJI KARYAWAN ===")
+    print(f"Nama Karyawan : {nama}")
+    print(f"Jabatan       : {jabatan}")
+    print(f"Gaji Pokok    : Rp {gaji_pokok:,.2f}")
+    print(f"Tunjangan     : Rp {tunjangan:,.2f}")
+    print(f"Pajak (5%)    : Rp {pajak:,.2f}")
+    print(f"Gaji Bersih   : Rp {gaji_bersih:,.2f}")
+    print("===============================")
+
+# Program utama (dinamis)
+print("=== Program Hitung Gaji Bersih Karyawan ===")
+nama = input("Masukkan nama karyawan: ")
+jabatan = input("Masukkan jabatan (manager/staff): ")
+
+while True:
+    try:
+        gaji_pokok = float(input("Masukkan gaji pokok: "))
+        if gaji_pokok < 0:
+            print("Gaji pokok tidak boleh negatif! Silakan coba lagi.")
+        else:
+            break
+    except ValueError:
+        print("Input harus berupa angka! Silakan coba lagi.")
+
+
+hitung_gaji_bersih(nama, jabatan, gaji_pokok)
