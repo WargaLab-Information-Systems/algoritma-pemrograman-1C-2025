@@ -1,0 +1,40 @@
+print("=== PROGRAM MONITORING LAMPU TAMAN KOTA ===")
+
+while True:
+    jumlah_baris = int(input("masukkan jumlah baris lampu: "))
+    if jumlah_baris > 0:
+        break
+    else:
+        print("nilai inputan harus lebih dari 0. coba lagi.")
+
+# list untuk menyimpan jumlah lampu per baris
+jumlah_lampu_per_baris = []
+
+for i in range(jumlah_baris):
+    jumlah_lampu = int(input(f"masukkan jumlah lampu untuk baris ke-{i+1}: "))#input jumlah lampu per baris 
+    jumlah_lampu_per_baris.append(jumlah_lampu)
+
+print("===== HASIL MONITORING LAMPU =====")
+
+for baris in range(jumlah_baris):
+    print(f"--- BARIS {baris + 1} ---")#header baris
+    
+    for lampu in range(jumlah_lampu_per_baris[baris]):#looping lampu per baris
+        nomor_lampu = lampu + 1
+        
+        # cek lampu baris terakhir
+        baris_terakhir = (baris == jumlah_baris - 1)
+        
+        # kondisi lampu
+        if nomor_lampu % 3 == 0:  # Kelipatan 3
+            pesan = f"lampu ke-{nomor_lampu} pada baris {baris + 1} rusak."
+            if baris_terakhir:
+                pesan += " periksa sambungan daya utama."
+            print(pesan)
+        else:  # tidak kelipatan 3
+            pesan = f"lampu ke-{nomor_lampu} pada baris {baris + 1} menyala."
+            if baris_terakhir:
+                pesan += " periksa sambungan daya utama."
+            print(pesan)
+
+print("===== SELESAI =====")
