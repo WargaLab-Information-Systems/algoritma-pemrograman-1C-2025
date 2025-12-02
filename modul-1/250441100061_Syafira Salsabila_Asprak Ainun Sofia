@@ -1,0 +1,56 @@
+# Soal 1
+# Program menghitung total belanja Hallim setelah pajak
+
+# Harga barang
+harga_buku = 5000
+harga_pensil = 4500
+
+# Jumlah barang yang dibeli
+jumlah_buku = 3
+jumlah_pensil = 2
+
+# Hitung total harga sebelum pajak
+total_sebelum_pajak = (harga_buku * jumlah_buku) + (harga_pensil * jumlah_pensil)
+
+# Hitung pajak 10%
+pajak = total_sebelum_pajak * 0.10
+
+# Hitung total setelah pajak
+total_setelah_pajak = total_sebelum_pajak + pajak
+
+# Tampilkan hasil 
+print("Total harga sebelum pajak: Rp", total_sebelum_pajak)
+print("Pajak (10%): Rp", pajak)
+print("Total harga setelah pajak: Rp", total_setelah_pajak)
+
+# Soal 2
+# Program menghitung volume dan luas permukaan balok
+p = int(input("Masukkan panjang balok (cm): "))
+l = int(input("Masukkan lebar balok (cm): "))
+t = int(input("Masukkan tinggi balok (cm): "))
+
+volume = p * l * t
+luas_permukaan = 2 * (p*l + p*t + l*t)
+
+print("Volume balok adalah:", volume)
+print("Luas permukaan balok adalah:", luas_permukaan)
+
+# Soal 3
+# tb: total bola (bola merah + bola biru)
+bola_merah = 8
+bola_biru = 6
+# a: jumlah bola yang diambil
+
+bola_merah = int(input("Masukkan bola merah:"))
+bola_biru = int(input("Masukkan bola biru:"))
+tb = int(input("Masukkan bola merah + bola biru:"))
+a = int(input("Masukkan jumlah bola yang diambil:"))
+
+numerator = tb * (tb-1) * (tb-2)
+denominator = a * (a-1) * (a-2)
+
+kombinasi = numerator // denominator
+
+print(f"dumerator: {numerator}")
+print(f"denominator: {denominator}")
+print(f"kemungkinan kombinasi: {kombinasi}")
